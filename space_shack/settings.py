@@ -15,6 +15,11 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +35,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.herokuapp.com',  # Heroku domain 
+    'localhost', '127.0.0.1', 'space-shack.herokuapp.com',  # Heroku domain 
 ]
 
 
@@ -43,7 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',#
-    'blog',
+    'reviews.apps.ReviewsConfig',
+    'cloudinary',
+    'cloudinary_storage',  
 ]
 
 MIDDLEWARE = [
