@@ -35,8 +35,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost', '127.0.0.1', 'space-shack.herokuapp.com',  # Heroku domain 
+    'localhost',
+    '127.0.0.1',
+    'space-shack-a7e1db1b7daa.herokuapp.com',  # ✅ actual deployed URL
 ]
+
 
 
 # Application definition
