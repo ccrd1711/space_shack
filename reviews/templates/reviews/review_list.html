@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guest Reviews</title>
+    </head>
+<body>
+    <h1>Guest Reviews</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p><strong>Author:</strong> {{ post.author }}</p>
+            <p>{{ post.body }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>No reviews have been posted yet</p>
+    {% endfor %}
+
+</body>
+</html> 
