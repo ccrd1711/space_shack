@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',#
     'reviews.apps.ReviewsConfig',
     'cloudinary',
-    'cloudinary_storage',  
+    'cloudinary_storage',
+    'accounts',  
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,7 @@ ROOT_URLCONF = 'space_shack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,6 +86,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'space_shack.wsgi.application'
+
+LOGIN_URL = 'login'
 
 
 # Database
