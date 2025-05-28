@@ -40,8 +40,6 @@ ALLOWED_HOSTS = [
     'space-shack-a7e1db1b7daa.herokuapp.com',  # ✅ actual deployed URL
 ]
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -88,6 +86,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'space_shack.wsgi.application'
 
 LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/reviews/'
+LOGOUT_REDIRECT_URL = '/reviews/'
+
 
 
 # Database

@@ -12,3 +12,16 @@ def my_blog(request):
 def review_list(request):
     reviews = ReviewPost.objects.all()
     return render(request, 'reviews/review_list.html', {'reviews': reviews})
+
+@login_required
+def add_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.author = request.user
+            review.save()
+            return redirect('review_list')
+    else:
+        form = ReviewForm()
+    return render(request, 'reviews/add_review.html', {'form': form})
