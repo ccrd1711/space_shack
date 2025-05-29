@@ -10,3 +10,5 @@ Logging out produces a 500 server error, and logging back in does not take me to
 Adding a blog post took to anotjher 500 server error
 - Adding ReviewForm to views.py fixed this as error showed is as undefined - long day of coding - forgot to put it in!
 
+Adding a blog post then did not post it to the reviews page
+- I was looping over 'posts' not 'reviews' so was in limbo
