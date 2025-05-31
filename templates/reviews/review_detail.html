@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ review.title }}</h1>
+  <p><strong>By:</strong> {{ review.author }}</p>
+  <p>{{ review.body }}</p>
+
+  <h3>Comments</h3>
+  {% for comment in comments %}
+    <div>
+      <p><strong>{{ comment.author }}</strong> ({{ comment.created_on }}):</p>
+      <p>{{ comment.body }}</p>
+    </div>
+  {% empty %}
+    <p>No comments yet.</p>
+  {% endfor %}
+
+  {% if user.is_authenticated %}
+    <h4>Leave a comment:</h4>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Post Comment</button>
+    </form>
+  {% else %}
+    <p><a href="{% url 'login' %}">Log in</a> to leave a comment.</p>
+  {% endif %}
+{% endblock %} 
+ 
