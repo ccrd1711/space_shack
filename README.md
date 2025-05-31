@@ -12,3 +12,6 @@ Adding a blog post took to anotjher 500 server error
 
 Adding a blog post then did not post it to the reviews page
 - I was looping over 'posts' not 'reviews' so was in limbo
+
+Features that were not implement but could be in future:
+User dashboard to see reviews
