@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>My Bookings</h1>
+  {% for booking in bookings %}
+    <div>
+      <p>{{ booking.check_in }} to {{ booking.check_out }} – £{{ booking.total_cost }}</p>
+      <form method="post" action="{% url 'cancel_booking' booking.id %}">
+        {% csrf_token %}
+        <button type="submit">Cancel Booking</button>
+      </form>
+    </div>
+  {% empty %}
+    <p>You have no bookings.</p>
+  {% endfor %}
+{% endblock %}
