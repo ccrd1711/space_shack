@@ -20,9 +20,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),  # For login/logout#
-    path('accounts/', include('accounts.urls')),  # For user registration#
+    path('accounts/', include('django.contrib.auth.urls')),  
+    path('accounts/', include('accounts.urls')),  
     path('reviews/', include('reviews.urls')),
+    path('book/', include('bookings.urls')),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
