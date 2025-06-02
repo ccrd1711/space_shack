@@ -70,3 +70,34 @@ def toggle_like(request, review_id):
         Like.objects.create(user=user, post=review)  # Add like
 
     return redirect('review_detail', review_id=review.id)
+
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(ReviewPost, id=review_id)
+
+    if review.author != request.user:
+        return HttpResponseForbidden("You can't edit this review.")
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('review_detail', review_id=review.id)
+    else:
+        form = ReviewForm(instance=review)
+
+    return render(request, 'reviews/edit_review.html', {'form': form})
+
+
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(ReviewPost, id=review_id)
+
+    if review.author != request.user:
+        return HttpResponseForbidden("You can't delete this review.")
+
+    if request.method == 'POST':
+        review.delete()
+        return redirect('review_list')
+
+    return render(request, 'reviews/confirm_delete_review.html', {'review': review})
