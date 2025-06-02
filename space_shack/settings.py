@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'reviews.apps.ReviewsConfig',
     'cloudinary',
     'cloudinary_storage',
-    'accounts',  
+    'accounts', 
+    'bookings', 
 ]
 
 MIDDLEWARE = [
