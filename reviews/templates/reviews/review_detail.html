@@ -1,15 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
+
   <h1>{{ review.title }}</h1>
   <p><strong>By:</strong> {{ review.author }}</p>
   <p>{{ review.body }}</p>
 
+  {% if user == review.author %}
+    <a href="{% url 'edit_review' review.id %}"><button>Edit</button></a>
+    <a href="{% url 'delete_review' review.id %}"><button>Delete</button></a>
+  {% endif %}
+
   <p>Likes: {{ review.total_likes }}</p>
 
   {% if user.is_authenticated %}
-    <form action="{% url 'toggle_like' review.id %}" method="post" style="display:inline;">
-      {% csrf_token %}
+    <form action="{% url 'toggle_like' review.id %}" method="post" style="display: inline;">
+      {% csrf_token %} 
       {% if user_liked %}
         <button type="submit">Unlike</button>
       {% else %}
@@ -25,15 +31,20 @@
     <div>
       <p><strong>{{ comment.author }}</strong> ({{ comment.created_on }}):</p>
       <p>{{ comment.body }}</p>
+
+      {% if user == comment.author %}
+        <a href="{% url 'edit_comment' comment.id %}"><button>Edit</button></a>
+        <a href="{% url 'delete_comment' comment.id %}"><button>Delete</button></a>
+      {% endif %}
     </div>
   {% empty %}
     <p>No comments yet.</p>
-  {% endfor %}
-
+  {% endfor %} 
+  
   {% if user.is_authenticated %}
     <h4>Leave a comment:</h4>
     <form method="post">
-      {% csrf_token %}
+      {% csrf_token %} 
       {{ form.as_p }}
       <button type="submit">Post Comment</button>
     </form>

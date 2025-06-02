@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import CommentForm
 from django.shortcuts import get_object_or_404, redirect
 from .models import ReviewPost, Like
+from .models import Comment
 
 # Test route view
 # def my_blog(request):
@@ -101,3 +102,35 @@ def delete_review(request, review_id):
         return redirect('review_list')
 
     return render(request, 'reviews/confirm_delete_review.html', {'review': review})
+
+@login_required
+def edit_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.author != request.user:
+        return HttpResponseForbidden("You can't edit this comment.")
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return redirect('review_detail', review_id=comment.post.id)
+    else:
+        form = CommentForm(instance=comment)
+
+    return render(request, 'reviews/edit_comment.html', {'form': form, 'comment': comment})
+
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.author != request.user:
+        return HttpResponseForbidden("You can't delete this comment.")
+
+    if request.method == 'POST':
+        review_id = comment.post.id
+        comment.delete()
+        return redirect('review_detail', review_id=review_id)
+
+    return render(request, 'reviews/confirm_delete_comment.html', {'comment': comment})
