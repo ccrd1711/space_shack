@@ -7,10 +7,10 @@ from datetime import timedelta
 def book_shack(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
-        if form.is valid():
+        if form.is_valid():
             booking = form.save(commit=False)
             nights = (booking.check_out - booking.check_in).days
-            booking.total_cost = nights * 5000
+            booking.total_cost = nights * 5117
             booking.save()
             return render(request, 'bookings/confirmation.html', {'booking': booking})
     else:
