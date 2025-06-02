@@ -8,9 +8,9 @@ from django.shortcuts import get_object_or_404, redirect
 from .models import ReviewPost, Like
 from .models import Comment
 
-# Test route view
-# def my_blog(request):
-#    return HttpResponse("Hello, space blog!")
+# landing page
+def index(request):
+    return render(request, 'index.html')
 
 # Actual blog view
 @login_required
