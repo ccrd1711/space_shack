@@ -13,7 +13,7 @@ from .models import Comment
 #    return HttpResponse("Hello, space blog!")
 
 # Actual blog view
-@login_required 
+@login_required
 def review_list(request):
     reviews = ReviewPost.objects.all()
     return render(request, 'reviews/review_list.html', {'reviews': reviews})
@@ -55,8 +55,8 @@ def review_detail(request, review_id):
         'review': review,
         'comments': comments,
         'form': form,
-        'user_liked': user_liked,  
-        'total_likes': review.likes.count(), 
+        'user_liked': user_liked,
+        'total_likes': review.likes.count(),
     }) 
 
 @login_required
