@@ -35,3 +35,19 @@ def cancel_booking(request, booking_id):
         booking.delete()
         return redirect('my_bookings')
     return render(request, 'bookings/confirm_cancel.html', {'booking': booking})
+
+@login_required
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            updated_booking = form.save(commit=False)
+            nights = (updated_booking.check_out - updated_booking.check_in).days
+            updated_booking.total_cost = nights * 5000
+            updated_booking.save()
+            return redirect('my_bookings')
+    else:
+        form = BookingForm(instance=booking)
+
+    return render(request, 'bookings/edit_booking.html', {'form': form, 'booking': booking})

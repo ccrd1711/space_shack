@@ -8,6 +8,9 @@
         {% csrf_token %}
         <button type="submit">Cancel Booking</button>
       </form>
+      <a href="{% url 'edit_booking' booking.id %}">
+        <button>Edit</button>
+      </a>
     </div>
   {% empty %}
     <p>You have no bookings.</p>
