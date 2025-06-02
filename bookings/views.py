@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import BookingForm
 from .models import Booking
 from datetime import timedelta
+from django.contrib.auth.decorators import login_required 
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def book_shack(request):
@@ -10,14 +12,16 @@ def book_shack(request):
         if form.is_valid():
             booking = form.save(commit=False)
             nights = (booking.check_out - booking.check_in).days
-            booking.total_cost = nights * 5117
+            booking.total_cost = nights * 5000
+            if request.user.is_authenticated:
+                booking.user = request.user
             booking.save()
             return render(request, 'bookings/confirmation.html', {'booking': booking})
-        if request.user.is_authenticated:
-            booking.user = request.user 
     else:
         form = BookingForm()
+
     return render(request, 'bookings/booking_form.html', {'form': form})
+
 
 @login_required
 def my_bookings(request):

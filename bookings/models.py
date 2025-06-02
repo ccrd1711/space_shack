@@ -3,8 +3,6 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.contrib.auth.models import User 
 
-user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) #optional foreign key to User model
-
 # Create your models here.
 
 class Booking(models.Model):
@@ -15,6 +13,8 @@ class Booking(models.Model):
     check_out = models.DateTimeField()
     total_cost = models.DecimalField(max_digits=10, decimal_places=2)
     created_on = models.DateTimeField(default=timezone.now)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) #optional foreign key to User model
 
     def clean(self):
         if self.number_of_guests > 2:
