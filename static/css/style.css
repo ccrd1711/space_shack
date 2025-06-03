@@ -71,7 +71,7 @@ header nav ul li a:hover {
     margin-top: 350px;
 }
 
-/* ALL BUTTONS UNIVERSAL */
+/* ALL BUTTONS UNIVERSAL(?) */
 .buttons .btn {
     font-family: 'Orbitron', Arial, sans-serif;
     padding: 15px 30px;
@@ -159,7 +159,6 @@ footer {
 
 /* BOOKING FORM PAGE STYLING */
 
-/* Booking Form */
 .booking-page {
     background-image: url('/static/images/shack-inside.png');
     background-size: cover;
@@ -206,4 +205,42 @@ button.btn {
 
 button.btn:hover {
     background-color: #0056b3;
+}
+
+/* ABOUT PAGE STYLING */
+
+.about-page {
+    margin: 0;
+    padding: 0;
+}
+
+.about-container {
+    display: flex;
+    height: 100vh; /* Full height */
+    align-items: center; /* Vertically center content */
+}
+
+.about-container .text {
+    flex: 1;
+    padding: 20px;
+    color: #fff;
+}
+
+.about-container .image {
+    flex: 1;
+    background-image: url('/static/images/matter-lake.png');
+    background-size: cover;
+    background-position: left center;
+    /*background-attachment: fixed; consider??? */
+    height: 100%; 
+}
+
+.about-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 16px;
+    line-height: 1.6;
 }
