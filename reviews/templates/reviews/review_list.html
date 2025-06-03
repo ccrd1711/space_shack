@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Guest Reviews</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Reviews</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 <body>
 
-    {% if user.is_authenticated %}
-        <p><a href="{% url 'add_review' %}">Post a Review</a></p>
-    {% endif %}
+    <div class="review-list-page">
+        <h1>Guest Reviews</h1>
 
-    <h1>Guest Reviews</h1>
+        {% if user.is_authenticated %}
+            <div class="add-review">
+                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
+            </div>
+        {% endif %}
 
-    {% for post in reviews %}
-        <div>
-            <h2><a href="{% url 'review_detail' review_id=post.id %}">{{ post.title }}</a></h2>
-            <p><strong>Author:</strong> {{ post.author }}</p>
-            <p>{{ post.body }}</p>
-            <hr>
-        </div>
-    {% empty %}
-        <p>No reviews have been posted yet</p>
-    {% endfor %}
+        {% if reviews %}
+            <div class="review-list">
+                {% for post in reviews %}
+                    <div class="review-item">
+                        <h2><a href="{% url 'review_detail' review_id=post.id %}">{{ post.title }}</a></h2>
+                        <p><strong>Author:</strong> {{ post.author }}</p>
+                        <p>{{ post.body|slice:":200" }}...</p>  <!-- Limit review body length -->
+                        <p><a href="{% url 'review_detail' review_id=post.id %}">Read More</a></p> 
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No reviews have been posted yet.</p>
+        {% endif %}
+    </div>
 
 </body>
 </html>
