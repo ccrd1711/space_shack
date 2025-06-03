@@ -26,6 +26,9 @@ and adding
 to models.py 
 ensuring I was comparing date() to date()
 
+Likes were not showing on reviews individually after design change, and getting poster comments under a button to say when you've liked a review:
+
+
 
 Features that were not implement but could be in future:
 User dashboard to see reviews

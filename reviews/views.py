@@ -35,11 +35,16 @@ def review_detail(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
     comments = review.comments.all().order_by('-created_on')
 
-    user_liked = False
-    if request.user.is_authenticated:
-        user_liked = review.likes.filter(user=request.user).exists()
+    user_liked = review.likes.filter(user=request.user).exists()
 
     if request.method == 'POST':
+        if 'like' in request.POST:
+           
+            if not user_liked:
+                Like.objects.create(user=request.user, post=review)
+
+            return redirect('review_detail', review_id=review.id)
+   
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
@@ -56,7 +61,7 @@ def review_detail(request, review_id):
         'form': form,
         'user_liked': user_liked,
         'total_likes': review.likes.count(),
-    }) 
+    })
 
 @login_required
 def toggle_like(request, review_id):

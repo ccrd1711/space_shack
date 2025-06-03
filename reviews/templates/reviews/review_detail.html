@@ -12,17 +12,54 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
                 <li><a href="/reviews/">Guest Reviews</a></li>
                 <li><a href="/booking/">Book Now</a></li>
             </ul>
         </nav>
     </header>    
+
     <div class="review-detail-container">
         <h1>{{ review.title }}</h1>
         <p class="author"><strong>Author:</strong> {{ review.author }}</p>
-        <p class="date"><small>Posted on: {{ review.created_at|date:"F j, Y" }}</small></p>
+        <p class="date"><small>Posted on: {{ review.created_on|date:"F j, Y" }}</small></p>
+        
+        <!-- Display likes count -->
+        <p class="likes"><strong>Likes:</strong> {{ total_likes }}</p>
+
+        <!-- Like Button -->
+        {% if user.is_authenticated %}
+            {% if not user_liked %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name="like" class="btn">Like</button>
+                </form>
+            {% else %}
+                <p>You have already liked this review!</p>
+            {% endif %}
+        {% endif %}
+
         <div class="review-body">
-            <p>{{ review.body }}</p>
+            <p>{{ review.content }}</p>
+        </div>
+
+        <!-- Comment Form -->
+        <div class="comment-section">
+            <h3>Comments</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn">Add Comment</button>
+            </form>
+            <div class="comments-list">
+                {% for comment in comments %}
+                    <p><strong>{{ comment.author.username }}</strong> says: {{ comment.body }}</p>
+                    <p><small>Posted on: {{ comment.created_on|date:"F j, Y" }}</small></p>
+                    <hr>
+                {% empty %}
+                    <p>No comments yet.</p>
+                {% endfor %}
+            </div>
         </div>
 
         {% if user.is_authenticated %}
