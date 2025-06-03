@@ -37,7 +37,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'space-shack-a7e1db1b7daa.herokuapp.com',  # ✅ actual deployed URL
+    'space-shack-a7e1db1b7daa.herokuapp.com',  
 ]
 
 # Application definition
