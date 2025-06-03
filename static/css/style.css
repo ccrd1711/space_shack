@@ -85,7 +85,7 @@ header nav ul li a {
     border-radius: 10px;
 }
 
-/* Footer */
+/* Footer universal */
 footer {
     text-align: center;
     padding: 10px;
@@ -97,16 +97,15 @@ footer {
 
 /* REVIEWS LIST PAGE STYLING */
 
-/* Specific styles for the review list page */
 .review-list-page {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
     padding: 20px;
 }
 
 .review-list-page h1 {
     text-align: center;
-    color: #333;
+    color: #22f010;
 }
 
 .review-list-page .add-review {
@@ -133,7 +132,7 @@ footer {
 }
 
 .review-list-page .review-item {
-    background-color: #f9f9f9;
+    background-color: #34fa19;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -157,10 +156,20 @@ footer {
 /* BOOKING FORM PAGE STYLING */
 
 /* Booking Form */
+.booking-page {
+    background-image: url('/static/images/shack-inside.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 800px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #15da50;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -181,8 +190,8 @@ button.btn {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #007bff;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(10, 221, 45);
     border: none;
     border-radius: 5px;
     font-size: 18px;
