@@ -9,7 +9,8 @@
     
     <!-- Space font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css?v=1' %}">
+
 </head>
 <body>
     <header>
@@ -26,14 +27,15 @@
         <section id="landing">
             <div class="landing-text">
                 <h1>Welcome to Space Shack</h1>
-                <p>Your home on a newly discovered planet. Book your stay and explore the stars!</p>
+                <p>Your home on a newly discovered planet.
+                    <br>
+                    <br>
+                    Book your stay and explore the stars!</p>
+                    <br>
                 <div class="buttons">
                     <a href="/reviews/" class="btn">Guest Reviews</a>
                     <a href="/book/" class="btn">Book Now</a>
                 </div>
-            </div>
-            <div class="landing-image">
-                
             </div>
         </section>
     </main>

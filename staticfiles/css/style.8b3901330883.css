@@ -37,7 +37,7 @@ header nav ul li a {
 
 /* Landing Page Section */
 #landing {
-    display: flex;
+    /*display: flex; - consider */
     justify-content: space-between;
     align-items: center;
     height: 100vh;
@@ -60,6 +60,7 @@ header nav ul li a {
 
 .landing-text p {
     font-size: 1.5em;
+    margin-top: 350px;
 }
 
 .buttons .btn {

@@ -37,7 +37,7 @@ header nav ul li a {
 
 /* Landing Page Section */
 #landing {
-    display: flex;
+    /*display: flex; - consider */
     justify-content: space-between;
     align-items: center;
     height: 100vh;
@@ -49,17 +49,19 @@ header nav ul li a {
 }
 
 .landing-text {
-    max-width: 50%;
+    /* max-width: 50%; - consider */ 
     z-index: 10;
 }
 
 .landing-text h1 {
     font-size: 4em;
     color: #FFD700;
+    margin-top:100px; 
 }
 
 .landing-text p {
     font-size: 1.5em;
+    margin-top: 350px;
 }
 
 .buttons .btn {
