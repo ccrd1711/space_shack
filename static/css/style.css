@@ -1,16 +1,18 @@
-/* LANDING PAGE WITH IMAGE */
+/* GENERAL STYLES - SITE CONSISTENCY */
 body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
     color: white;
 }
 
+/* NAVIGATION BAR UNIVERSAL */
 header nav {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    padding: 10px 20px;
     position: fixed;
+    text-align: center;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -35,7 +37,12 @@ header nav ul li a {
     font-size: 18px;
 }
 
-/* Landing Page Section */
+header nav ul li a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+/* HOME PAGE STYLING */
 #landing {
     /*display: flex; - consider */
     justify-content: space-between;
@@ -64,7 +71,9 @@ header nav ul li a {
     margin-top: 350px;
 }
 
+/* ALL BUTTONS UNIVERSAL */
 .buttons .btn {
+    font-family: 'Orbitron', Arial, sans-serif;
     padding: 15px 30px;
     margin-top: 20px;
     background-color: #FFD700;
@@ -79,13 +88,7 @@ header nav ul li a {
     background-color: #FF8C00;
 }
 
-.landing-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Footer universal */
+/* FOOTER UNIVERSAL STYLE */
 footer {
     text-align: center;
     padding: 10px;
@@ -123,9 +126,10 @@ footer {
     border-radius: 5px;
 }
 
-.review-list-page .btn:hover {
-    background-color: #0056b3;
-}
+ .review-list-page .btn:hover {
+    background-color: #FF8C00;
+    color: #FFD700;
+} 
 
 .review-list-page .review-list {
     margin-top: 20px;
@@ -167,9 +171,10 @@ footer {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 500px;
     margin: 20px auto;
-    background-color: #15da50;
+    margin-top: 200px;
+    /* background-color: #15da50; CONSIDER???? */
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -177,7 +182,7 @@ footer {
 
 .container h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -187,6 +192,7 @@ form p {
 }
 
 button.btn {
+    font-family: 'Orbitron', Arial, sans-serif;
     display: block;
     width: 100%;
     padding: 15px;

@@ -1,54 +1,41 @@
-{% extends 'base.html' %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ review.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="review-detail-page">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/reviews/">Guest Reviews</a></li>
+                <li><a href="/booking/">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <div class="review-detail-container">
+        <h1>{{ review.title }}</h1>
+        <p class="author"><strong>Author:</strong> {{ review.author }}</p>
+        <p class="date"><small>Posted on: {{ review.created_at|date:"F j, Y" }}</small></p>
+        <div class="review-body">
+            <p>{{ review.body }}</p>
+        </div>
 
-{% block content %}
-
-  <h1>{{ review.title }}</h1>
-  <p><strong>By:</strong> {{ review.author }}</p>
-  <p>{{ review.body }}</p>
-
-  {% if user == review.author %}
-    <a href="{% url 'edit_review' review.id %}"><button>Edit</button></a>
-    <a href="{% url 'delete_review' review.id %}"><button>Delete</button></a>
-  {% endif %}
-
-  <p>Likes: {{ review.total_likes }}</p>
-
-  {% if user.is_authenticated %}
-    <form action="{% url 'toggle_like' review.id %}" method="post" style="display: inline;">
-      {% csrf_token %} 
-      {% if user_liked %}
-        <button type="submit">Unlike</button>
-      {% else %}
-        <button type="submit">Like</button>
-      {% endif %}
-    </form>
-  {% else %}
-    <p><a href="{% url 'login' %}">Log in</a> to like this review.</p>
-  {% endif %}
-
-  <h3>Comments</h3>
-  {% for comment in comments %}
-    <div>
-      <p><strong>{{ comment.author }}</strong> ({{ comment.created_on }}):</p>
-      <p>{{ comment.body }}</p>
-
-      {% if user == comment.author %}
-        <a href="{% url 'edit_comment' comment.id %}"><button>Edit</button></a>
-        <a href="{% url 'delete_comment' comment.id %}"><button>Delete</button></a>
-      {% endif %}
+        {% if user.is_authenticated %}
+            <div class="edit-delete-buttons">
+                <a href="{% url 'edit_review' review.id %}" class="btn">Edit</a>
+                <a href="{% url 'delete_review' review.id %}" class="btn">Delete</a>
+            </div>
+        {% endif %}
     </div>
-  {% empty %}
-    <p>No comments yet.</p>
-  {% endfor %} 
-  
-  {% if user.is_authenticated %}
-    <h4>Leave a comment:</h4>
-    <form method="post">
-      {% csrf_token %} 
-      {{ form.as_p }}
-      <button type="submit">Post Comment</button>
-    </form>
-  {% else %}
-    <p><a href="{% url 'login' %}">Log in</a> to leave a comment.</p>
-  {% endif %} 
-{% endblock %}
+
+    <footer>
+        <p>&copy; 2025 Space Shack</p>
+    </footer>
+
+</body>
+</html>
