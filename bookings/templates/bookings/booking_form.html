@@ -1,10 +1,38 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book the Space Shack</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="booking-page">
 
-{% block content %}
-  <h1>Book the Space Shack</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Book Now</button>
-  </form>
-{% endblock %}
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/reviews/">Guest Reviews</a></li>
+            <li><a href="/booking/">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Book the Space Shack</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Render form fields dynamically -->
+            {{ form.as_p }}
+
+            <button type="submit" class="btn">Book Now</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Space Shack</p>
+    </footer>
+</body>
+</html>
