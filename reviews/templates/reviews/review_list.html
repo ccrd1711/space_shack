@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Reviews</title>
+    {% load static %}
+    <!-- Space font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/reviews/">Reviews</a></li>
+                <li><a href="/book/">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="review-list-page">
         <h1>Guest Reviews</h1>

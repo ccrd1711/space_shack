@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import ReviewPost
 from .forms import ReviewForm
 from django.contrib.auth.decorators import login_required 
 from .forms import CommentForm
