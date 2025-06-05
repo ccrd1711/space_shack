@@ -1,12 +1,18 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block body_class %}class="review-page"{% endblock %}
 
-{% load static %} 
+{% load static %}
 
 {% block content %}
     <div class="review-list-page">
         <h1>Guest Reviews</h1>
+
+        {% if user.is_authenticated %}
+            <div class="add-review">
+                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
+            </div>
+        {% endif %}
 
         {% if reviews %}
             <div class="review-list">
@@ -14,18 +20,12 @@
                     <div class="review-item">
                         <h2><a href="{% url 'review_detail' review_id=post.id %}" class="btn">{{ post.title }}</a></h2>
                         <p><strong>Author:</strong> {{ post.author }}</p>
-                        <p>{{ post.body|slice:":200" }}...</p>  <!-- Limits review body length -->
-                        <p><a href="{% url 'review_detail' review_id=post.id %}">Read More</a></p> 
+                        <p>{{ post.body|slice:":200" }}...</p>
+                        <p><a href="{% url 'review_detail' review_id=post.id %}">Read More</a></p>
                         <hr>
                     </div>
                 {% endfor %}
-        {% if user.is_authenticated %}
-            <div class="add-review">
-                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
             </div>
-        {% endif %}
-            </div>
-
         {% else %}
             <p>No reviews have been posted yet.</p>
         {% endif %}
@@ -33,10 +33,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/review-carousel.js' %}"></script>
+    <script src="{% static 'js/review-carousel.js' %}"></script>
 {% endblock %}
-    <footer>
-        <p>&copy; 2025 Space Shack. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>

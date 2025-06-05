@@ -1,24 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const reviews = document.querySelectorAll(".review-item");
     let currentIndex = 0;
-    const visibleCount = 1;
-    const intervalTime = 10000;
 
     function showCurrentReview() {
-        reviews.forEach((review) => {
+        reviews.forEach((review, i) => {
             review.classList.remove("active");
         });
 
-        for (let i = 0; i < visibleCount; i++) {
-            const indexToShow = (currentIndex + i) % reviews.length;
-            reviews[indexToShow].classList.add("active");
-        }
+        reviews[currentIndex].classList.add("active");
 
-        currentIndex = (currentIndex + visibleCount) % reviews.length;
+        currentIndex = (currentIndex + 1) % reviews.length;
     }
 
     if (reviews.length > 0) {
-        showCurrentReview();
-        setInterval(showCurrentReview, intervalTime);
+        showCurrentReview(); // show first one immediately
+        setInterval(showCurrentReview, 4000);
     }
 });
