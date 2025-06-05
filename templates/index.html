@@ -1,37 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Shack</title>
+{% extends 'base.html' %}
 
-    {% load static %}   
-    
-    <!-- Space font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css?v=1' %}">
-
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/reviews/">Reviews</a></li>
-                <li><a href="/book/">Book Now</a></li>
-            </ul>
-
-            <ul>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                {% endif %}    
-            </ul>
-        </nav>
-    </header>
-
+{% block content %}
     <main>
         <section id="landing">
             <div class="landing-text">
@@ -39,21 +8,15 @@
                 <br>
                 <h2>Your Galactic Getaway on Phaedrus-1711</h2>
                 <p>Your home on a newly discovered planet.
-                    <br>
-                    <br>
-                    Book your stay and explore the stars!</p>
-                    <br>
+                    <br><br>
+                    Book your stay and explore the stars!
+                </p>
+                <br>
                 <div class="buttons">
                     <a href="/reviews/" class="btn">Guest Reviews</a>
                     <a href="/book/" class="btn">Book Now</a>
                 </div>
             </div>
         </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Space Shack. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
-
+    </main> 
+{% endblock %}
