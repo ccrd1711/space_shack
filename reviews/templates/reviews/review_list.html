@@ -8,17 +8,10 @@
     <div class="review-list-page">
         <h1>Guest Reviews</h1>
 
-        {% if user.is_authenticated %}
-            <div class="add-review">
-                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
-            </div>
-        {% endif %}
-
         {% if reviews %}
             <div class="review-list">
                 {% for post in reviews %}
                     <div class="review-item">
-                        <!-- REVIEW BUTTON BELOW???? -->
                         <h2><a href="{% url 'review_detail' review_id=post.id %}" class="btn">{{ post.title }}</a></h2>
                         <p><strong>Author:</strong> {{ post.author }}</p>
                         <p>{{ post.body|slice:":200" }}...</p>  <!-- Limits review body length -->
@@ -26,7 +19,13 @@
                         <hr>
                     </div>
                 {% endfor %}
+        {% if user.is_authenticated %}
+            <div class="add-review">
+                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
             </div>
+        {% endif %}
+            </div>
+
         {% else %}
             <p>No reviews have been posted yet.</p>
         {% endif %}

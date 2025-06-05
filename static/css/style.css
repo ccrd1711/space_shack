@@ -163,14 +163,17 @@ footer {
 }
 
 .review-list-page {
-    display: flex;
-    justify-content: flex-start;
-    padding: 40px 60px;
+    align-items: center;
+    min-height: 80vh;
+    padding-left: 5%; 
+    padding-right: 5%;
 }
 
 .review-list {
-    position: relative;
-    min-height: 250px;
+    margin: 0;
+    width: 50%; 
+    margin-right: auto; 
+    padding-top: 100px;
 }
 
 .review-item {
@@ -190,13 +193,13 @@ footer {
 }
 
 .review-list-page h1 {
-    text-align: center;
+    padding-top: 100px;
     color: #dafc1c;
 }
 
 .review-list-page .add-review {
-    text-align: center;
     margin-bottom: 20px;
+    padding-top: 100px;
 }
 
 .review-list-page .btn {
@@ -219,7 +222,7 @@ footer {
 }
 
 .review-list-page .review-item {
-    background-color: #34fa19;
+    background-color: #282928;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
