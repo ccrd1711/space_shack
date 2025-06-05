@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (reviews.length > 0) {
-        showCurrentReview(); // show first one immediately
-        setInterval(showCurrentReview, 40000);
+        showCurrentReview(); 
+        setInterval(showCurrentReview, 8000);
     }
 });
