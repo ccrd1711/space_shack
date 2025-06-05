@@ -12,7 +12,6 @@ def index(request):
     return render(request, 'index.html')
 
 # Actual blog view
-@login_required
 def review_list(request):
     reviews = ReviewPost.objects.all()
     return render(request, 'reviews/review_list.html', {'reviews': reviews})
