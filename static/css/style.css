@@ -163,14 +163,35 @@ footer {
 }
 
 .review-list-page {
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px 60px;
+}
+
+.review-list {
+    position: relative;
+    min-height: 250px;
+}
+
+.review-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.review-item.active {
+    opacity: 1;
+    z-index: 1;
+    position: relative;
 }
 
 .review-list-page h1 {
     text-align: center;
-    color: #22f010;
+    color: #dafc1c;
 }
 
 .review-list-page .add-review {

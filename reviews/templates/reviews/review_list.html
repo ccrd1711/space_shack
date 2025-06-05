@@ -2,6 +2,8 @@
 
 {% block body_class %}class="review-page"{% endblock %}
 
+{% load static %} 
+
 {% block content %}
     <div class="review-list-page">
         <h1>Guest Reviews</h1>
@@ -29,6 +31,10 @@
             <p>No reviews have been posted yet.</p>
         {% endif %}
     </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/review-carousel.js' %}"></script>
 {% endblock %}
     <footer>
         <p>&copy; 2025 Space Shack. All Rights Reserved.</p>
