@@ -152,6 +152,16 @@ footer {
 
 /* REVIEWS LIST PAGE STYLING */
 
+.review-page {
+    background-image: url('/static/images/reviews-pic.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 .review-list-page {
     width: 50%;
     margin: 0 auto;
