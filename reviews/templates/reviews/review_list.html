@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guest Reviews</title>
-    {% load static %}
-    <!-- Space font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/reviews/">Reviews</a></li>
-                <li><a href="/book/">Book Now</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends 'base.html' %} 
+
+{% block content %}
     <div class="review-list-page">
         <h1>Guest Reviews</h1>
 
@@ -46,6 +27,7 @@
             <p>No reviews have been posted yet.</p>
         {% endif %}
     </div>
+{% endblock %}
     <footer>
         <p>&copy; 2025 Space Shack. All Rights Reserved.</p>
     </footer>
