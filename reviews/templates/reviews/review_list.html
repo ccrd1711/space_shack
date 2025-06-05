@@ -20,9 +20,8 @@
                     <div class="review-item">
                         <h2><a href="{% url 'review_detail' review_id=post.id %}" class="btn">{{ post.title }}</a></h2>
                         <p><strong>Author:</strong> {{ post.author }}</p>
-                        <p>{{ post.body|slice:":200" }}...</p>
-                        <p><a href="{% url 'review_detail' review_id=post.id %}">Read More</a></p>
-                        <hr>
+                        <p>{{ post.body|slice:":200" }}</p>
+                        <p><a href="{% url 'review_detail' review_id=post.id %}" class="read-more-link">Read More</a></p>
                     </div>
                 {% endfor %}
             </div>

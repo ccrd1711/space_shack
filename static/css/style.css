@@ -172,7 +172,7 @@ footer {
 .review-list {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     height: 200px;
     overflow: hidden;
 }
@@ -193,6 +193,17 @@ footer {
     z-index: 1;
 }
 
+/* READ MORE BUTTON */
+.read-more-link {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.read-more-link:hover {
+    color: #FFD700;
+}
+
 .review-list-page h1 {
     padding-top: 100px;
     color: #dafc1c;
@@ -200,7 +211,7 @@ footer {
 
 .review-list-page .add-review {
     margin-bottom: 20px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .review-list-page .btn {
@@ -219,7 +230,7 @@ footer {
 } 
 
 .review-list-page .review-list {
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
 .review-list-page .review-item {
@@ -237,6 +248,7 @@ footer {
 .review-list-page .review-item p {
     font-size: 14px;
     line-height: 1.5;
+    color: white;
 }
 
 .review-list-page hr {
