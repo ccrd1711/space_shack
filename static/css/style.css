@@ -16,6 +16,13 @@ header nav {
     top: 0;
     width: 100%;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul:last-child {
+    margin-right: 40px;
 }
 
 header nav ul {
