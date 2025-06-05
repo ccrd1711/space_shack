@@ -49,15 +49,51 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* WELCOME MESSAGE STYLING */ 
-
-.welcome-msg {
-    text-align: right;
-    margin: 10px 20px 0 0;
-    font-weight: bold;
-    color: red
+/* DROPDOWN CONTAINER STYLING */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
+/* STYLE FOR USERNAME OR TRIGGER */
+.dropbtn {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* DROPDOWN MENU (HIDDEN BY DEFAULT) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* DROPDOWN MENU ITEMS */
+.dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* HOVER EFFECT FOR DROPDOWN ITEMS */
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* SHOWS DROPDOWN ON HOVER */
+}
+
+.dropdown:hover .dropbtn {
+    text-decoration: underline;
+}
 
 /* HOME PAGE STYLING */
 #landing {
