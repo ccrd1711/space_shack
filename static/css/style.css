@@ -11,6 +11,13 @@ button {
     font-family: inherit;
 }
 
+/* SPACING ON 9 PAGES LATE IN F.END DEV*/
+
+.spacing-top {
+  margin-top: 80px;
+}
+
+
 /* NAVIGATION BAR UNIVERSAL */
 header nav {
     background-color: rgba(0, 0, 0, 0.7);

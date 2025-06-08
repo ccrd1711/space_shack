@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>Cancel Booking</h1>
-  <p>Are you sure you want to cancel your booking from {{ booking.check_in }} to {{ booking.check_out }}?</p>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, cancel</button>
-    <a href="{% url 'my_bookings' %}">No, go back</a>
-  </form>
+  <div class="spacing-top">
+    <h1>Cancel Booking</h1>
+    <p>Are you sure you want to cancel your booking from {{ booking.check_in }} to {{ booking.check_out }}?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Yes, cancel</button>
+      <a href="{% url 'my_bookings' %}">No, go back</a>
+    </form>
+  </div>
 {% endblock %}

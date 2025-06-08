@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Booking Confirmed</h1>
-  <p>Thank you, {{ booking.name }}! Your stay from {{ booking.check_in }} to {{ booking.check_out }} is confirmed.</p>
-  <p>Total cost: £{{ booking.total_cost }}</p>
+  <div class="spacing-top">
+    <h1>Booking Confirmed</h1>
+    <p>Thank you, {{ booking.name }}! Your stay from {{ booking.check_in }} to {{ booking.check_out }} is confirmed.</p>
+    <p>Total cost: £{{ booking.total_cost }}</p>
+  </div>   
 {% endblock %}
