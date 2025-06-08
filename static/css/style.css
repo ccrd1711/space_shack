@@ -233,6 +233,15 @@ footer {
     z-index: 1;
 }
 
+.review-stars .star {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.review-stars .star.filled {
+    color: gold;
+}
+
 /* READ MORE BUTTON */
 .read-more-link {
     color: white;
