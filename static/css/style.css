@@ -193,6 +193,44 @@ footer {
     z-index: 1;
 }
 
+/* INDIVIDUAL REVIEWS PAGE WITH HEART */
+
+.like-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.like-button {
+    all: unset;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+}
+
+.like-button:hover {
+    color: red;
+}
+
+.liked {
+    color: red;
+    cursor: default;
+}
+
+.like-count {
+    font-size: 1.2rem;
+}
+
+.star-rating {
+    color: gold;
+    font-size: 1.5rem;
+}
+
+
 /* READ MORE BUTTON */
 .read-more-link {
     color: white;
@@ -292,10 +330,8 @@ form p {
 button.btn {
     font-family: 'Orbitron', Arial, sans-serif;
     display: block;
-    width: 100%;
     padding: 15px;
     background-color: #ffffff;
-    color: rgb(10, 221, 45);
     border: none;
     border-radius: 5px;
     font-size: 18px;

@@ -38,8 +38,9 @@ def review_detail(request, review_id):
 
     if request.method == 'POST':
         if 'like' in request.POST:
-           
-            if not user_liked:
+            if user_liked:
+                Like.objects.filter(user=request.user, post=review).delete()  # Unlike toggle
+            else:
                 Like.objects.create(user=request.user, post=review)
 
             return redirect('review_detail', review_id=review.id)

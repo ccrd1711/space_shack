@@ -1,48 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ review.title }}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body class="review-detail-page">
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/reviews/">Guest Reviews</a></li>
-                <li><a href="/booking/">Book Now</a></li>
-            </ul>
-        </nav>
-    </header>    
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}   
 
     <div class="review-detail-container">
         <h1>{{ review.title }}</h1>
         <p class="author"><strong>Author:</strong> {{ review.author }}</p>
         <p class="date"><small>Posted on: {{ review.created_on|date:"F j, Y" }}</small></p>
         <p><strong>Rating:</strong>
-            {% for i in "12345"|slice:":post.rating"|make_list %}
-                ★ 
-            {% endfor %}
+            <span class="star-rating">
+                {% for i in "12345"|slice:":post.rating"|make_list %}
+                    ★ 
+                {% endfor %}
+            </span>
         </p>
         
-        <!-- Display likes count -->
-        <p class="likes"><strong>Likes:</strong> {{ total_likes }}</p>
-
-        <!-- Like Button -->
-        {% if user.is_authenticated %}
-            {% if not user_liked %}
-                <form method="POST">
+        <div class="like-container">
+            {% if user.is_authenticated %}
+                <form method="POST" class="like-form">
                     {% csrf_token %}
-                    <button type="submit" name="like" class="btn">Like</button>
+                    <button type="submit" name="like" class="like-button">
+                        {% if user_liked %}
+                            ❤️
+                        {% else %}
+                            🤍
+                        {% endif %}
+                    </button>
+                    <span class="like-count">{{ total_likes }}</span>
                 </form>
             {% else %}
-                <p>You have already liked this review!</p>
+                <span class="like-button">❤️</span>
+                <span class="like-count">{{ total_likes }}</span>
             {% endif %}
-        {% endif %}
+        </div>
+
+
 
         <div class="review-body">
             <p>{{ review.content }}</p>
@@ -53,7 +46,7 @@
             <h3>Comments</h3>
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form.body }}
                 <button type="submit" class="btn">Add Comment</button>
             </form>
             <div class="comments-list">
@@ -74,7 +67,7 @@
             </div>
         {% endif %}
     </div>
-
+{% endblock %}
     <footer>
         <p>&copy; 2025 Space Shack</p>
     </footer>
