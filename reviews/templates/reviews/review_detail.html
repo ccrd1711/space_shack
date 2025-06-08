@@ -64,6 +64,13 @@
                         <p><strong>{{ comment.author.username }}</strong> says:</p>
                         <p>{{ comment.body }}</p>
                         <p class="comment-date">{{ comment.created_on|date:"F j, Y" }}</p>
+
+                        {% if user == comment.author %}
+                            <div class="comment-actions">
+                                <a href="{% url 'edit_comment' comment.id %}" class="btn small">Edit</a>
+                                <a href="{% url 'delete_comment' comment.id %}" class="btn small">Delete</a>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% else %}

@@ -8,7 +8,12 @@ class ReviewForm(forms.ModelForm):
         model = ReviewPost
         fields = ['title', 'content', 'rating']
         widgets = {
-            'rating': forms.Select(choices=[(i, f"{i} Stars") for i in range(1, 6)]), 
+            'rating': forms.Select(
+                choices=[
+                    (i, f"{i} Stars")
+                    for i in range(1, 6)
+                ]
+            ),
         }
 
 
@@ -22,4 +27,4 @@ class CommentForm(forms.ModelForm):
                 'rows': 4,
                 'style': 'resize: vertical;'
             }),
-        }
+}
