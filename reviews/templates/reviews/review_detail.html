@@ -1,76 +1,76 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% load static %}
 
-{% block content %}   
+{% block content %}
+<div class="review-detail-container">
 
-    <div class="review-detail-container">
-        <h1>{{ review.title }}</h1>
-        <p class="author"><strong>Author:</strong> {{ review.author }}</p>
-        <p class="date"><small>Posted on: {{ review.created_on|date:"F j, Y" }}</small></p>
-        <p><strong>Rating:</strong>
-            <span class="star-rating">
-                {% for i in "12345"|slice:":post.rating"|make_list %}
-                    ★ 
+    <!-- Review Header -->
+    <div class="review-header">
+        <h1 class="review-title">{{ review.title }}</h1>
+
+        <div class="review-meta">
+            <span class="review-author">by {{ review.author }}</span>
+            <span class="review-date">{{ review.created_on|date:"F j, Y" }}</span>
+            <span class="review-rating">
+                {% for i in "12345"|slice:":review.rating"|make_list %}
+                    ★
                 {% endfor %}
             </span>
-        </p>
-        
-        <div class="like-container">
-            {% if user.is_authenticated %}
-                <form method="POST" class="like-form">
-                    {% csrf_token %}
-                    <button type="submit" name="like" class="like-button">
-                        {% if user_liked %}
-                            ❤️
-                        {% else %}
-                            🤍
-                        {% endif %}
-                    </button>
+
+            <!-- Like Button -->
+            <div class="like-block">
+                {% if user.is_authenticated %}
+                    <form method="POST" class="like-form">
+                        {% csrf_token %}
+                        <button type="submit" name="like" class="like-button">
+                            {% if user_liked %}❤️{% else %}🤍{% endif %}
+                        </button>
+                        <span class="like-count">{{ total_likes }}</span>
+                    </form>
+                {% else %}
+                    <span class="like-button">❤️</span>
                     <span class="like-count">{{ total_likes }}</span>
-                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Content -->
+    <div class="review-body">
+        <p>{{ review.content }}</p>
+    </div>
+
+    <!-- Edit/Delete (if owner) -->
+    {% if user == review.author %}
+        <div class="edit-delete-buttons">
+            <a href="{% url 'edit_review' review.id %}" class="btn small">Edit</a>
+            <a href="{% url 'delete_review' review.id %}" class="btn small">Delete</a>
+        </div>
+    {% endif %}
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+        <h3>Comments</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.body }}
+            <button type="submit" class="btn">Add Comment</button>
+        </form>
+
+        <div class="comments-list">
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p><strong>{{ comment.author.username }}</strong> says:</p>
+                        <p>{{ comment.body }}</p>
+                        <p class="comment-date">{{ comment.created_on|date:"F j, Y" }}</p>
+                    </div>
+                {% endfor %}
             {% else %}
-                <span class="like-button">❤️</span>
-                <span class="like-count">{{ total_likes }}</span>
+                <p class="no-comments">No comments yet.</p>
             {% endif %}
         </div>
-
-
-
-        <div class="review-body">
-            <p>{{ review.content }}</p>
-        </div>
-
-        <!-- Comment Form -->
-        <div class="comment-section">
-            <h3>Comments</h3>
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.body }}
-                <button type="submit" class="btn">Add Comment</button>
-            </form>
-            <div class="comments-list">
-                {% for comment in comments %}
-                    <p><strong>{{ comment.author.username }}</strong> says: {{ comment.body }}</p>
-                    <p><small>Posted on: {{ comment.created_on|date:"F j, Y" }}</small></p>
-                    <hr>
-                {% empty %}
-                    <p>No comments yet.</p>
-                {% endfor %}
-            </div>
-        </div>
-
-        {% if user.is_authenticated %}
-            <div class="edit-delete-buttons">
-                <a href="{% url 'edit_review' review.id %}" class="btn">Edit</a>
-                <a href="{% url 'delete_review' review.id %}" class="btn">Delete</a>
-            </div>
-        {% endif %}
     </div>
-{% endblock %}
-    <footer>
-        <p>&copy; 2025 Space Shack</p>
-    </footer>
 
-</body>
-</html>
+</div>
+{% endblock %}
