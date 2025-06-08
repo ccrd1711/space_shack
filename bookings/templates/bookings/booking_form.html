@@ -9,7 +9,6 @@
         <form method="post">
             {% csrf_token %}
             
-            <!-- Render form fields dynamically -->
             {{ form.as_p }}
 
             <button type="submit" class="btn">Book Now</button>
