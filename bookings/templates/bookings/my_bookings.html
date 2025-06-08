@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
   <h1>My Bookings</h1>
+
   {% for booking in bookings %}
-    <div>
+    <div class="booking-card">
       <p>{{ booking.check_in }} to {{ booking.check_out }} – £{{ booking.total_cost }}</p>
-        <form method="post">
-          {% csrf_token %}
-          <button type="submit">Yes, cancel</button>
-          <a href="{% url 'my_bookings' %}">No, go back</a>
-        </form>
-          <a href="{% url 'edit_booking' booking.id %}">
-          <button>Edit</button>
-          </a>
+
+      <!-- Cancel link (goes to confirmation page) -->
+      <a href="{% url 'cancel_booking' booking.id %}" class="btn cancel-btn">Cancel Booking</a>
+
+      <!-- Edit button -->
+      <a href="{% url 'edit_booking' booking.id %}" class="btn edit-btn">Edit Booking</a>
     </div>
   {% empty %}
     <p>You have no bookings.</p>

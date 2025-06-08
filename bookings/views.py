@@ -30,12 +30,14 @@ def my_bookings(request):
 
 @login_required
 def cancel_booking(request, booking_id):
+    print("VIEW HIT:", request.method)
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+
     if request.method == 'POST':
+        print("DELETING BOOKING")
         booking.delete()
         return redirect('my_bookings')
     return render(request, 'bookings/confirm_cancel.html', {'booking': booking})
-    print("METHOD:", request.method) 
 
 @login_required
 def edit_booking(request, booking_id):
