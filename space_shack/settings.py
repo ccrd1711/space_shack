@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'space_shack.wsgi.application'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = None
 
 
 
