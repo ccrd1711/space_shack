@@ -7,6 +7,10 @@ body {
     color: white;
 }
 
+button {
+    font-family: inherit;
+}
+
 /* NAVIGATION BAR UNIVERSAL */
 header nav {
     background-color: rgba(0, 0, 0, 0.7);

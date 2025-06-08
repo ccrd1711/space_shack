@@ -35,6 +35,7 @@ def cancel_booking(request, booking_id):
         booking.delete()
         return redirect('my_bookings')
     return render(request, 'bookings/confirm_cancel.html', {'booking': booking})
+    print("METHOD:", request.method) 
 
 @login_required
 def edit_booking(request, booking_id):

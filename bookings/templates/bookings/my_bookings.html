@@ -4,13 +4,14 @@
   {% for booking in bookings %}
     <div>
       <p>{{ booking.check_in }} to {{ booking.check_out }} – £{{ booking.total_cost }}</p>
-      <form method="post" action="{% url 'cancel_booking' booking.id %}">
-        {% csrf_token %}
-        <button type="submit">Cancel Booking</button>
-      </form>
-      <a href="{% url 'edit_booking' booking.id %}">
-        <button>Edit</button>
-      </a>
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit">Yes, cancel</button>
+          <a href="{% url 'my_bookings' %}">No, go back</a>
+        </form>
+          <a href="{% url 'edit_booking' booking.id %}">
+          <button>Edit</button>
+          </a>
     </div>
   {% empty %}
     <p>You have no bookings.</p>
