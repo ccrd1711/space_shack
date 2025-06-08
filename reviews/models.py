@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
 from django.utils.text import slugify 
 from django.utils import timezone 
 
@@ -9,10 +8,15 @@ class ReviewPost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="review_posts")
-    featured_image = CloudinaryField('image', blank=True, null=True, default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     excerpt = models.TextField(blank=True)
+    rating = models.IntegerField(
+        default=5,
+        choices=[(i, f"{i} Stars") for i in range(1, 6)],
+        help_text="Select a rating from 1 to 5 stars"
+    )
+
     approved = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):

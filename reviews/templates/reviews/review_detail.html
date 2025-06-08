@@ -23,6 +23,11 @@
         <h1>{{ review.title }}</h1>
         <p class="author"><strong>Author:</strong> {{ review.author }}</p>
         <p class="date"><small>Posted on: {{ review.created_on|date:"F j, Y" }}</small></p>
+        <p><strong>Rating:</strong>
+            {% for i in "12345"|slice:":post.rating"|make_list %}
+                ★ 
+            {% endfor %}
+        </p>
         
         <!-- Display likes count -->
         <p class="likes"><strong>Likes:</strong> {{ total_likes }}</p>
