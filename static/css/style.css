@@ -61,6 +61,14 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+.burger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 /* DROPDOWN CONTAINER STYLING */
 .dropdown {
     position: relative;
@@ -468,3 +476,31 @@ button.btn:hover {
 }
 
 /* MEDIA QUERIES */
+
+/* Show burger icon and hide nav links under 1024px */
+@media (max-width: 1023px) {
+    .burger {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        text-align: right;
+    }
+}
