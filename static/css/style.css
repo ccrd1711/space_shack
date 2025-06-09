@@ -224,7 +224,7 @@ footer {
     width: 100%;
     max-width: 600px;
     height: 200px;
-    overflow: hidden;
+   /* overflow: hidden; KEEPS FULL REVIEW SHOWING - CONSIDER?*/ 
 }
 
 .review-item {
