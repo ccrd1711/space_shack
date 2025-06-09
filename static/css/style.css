@@ -278,7 +278,6 @@ footer {
 
 .review-list-page .add-review {
     margin-bottom: 20px;
-    padding-top: 50px;
 }
 
 .review-list-page .btn {
@@ -297,7 +296,7 @@ footer {
 } 
 
 .review-list-page .review-list {
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .review-list-page .review-item {
@@ -556,6 +555,11 @@ button.btn:hover {
     footer {
         padding: 0px;
     }
+
+    .review-list-page h1 {
+        padding-top: 75px;
+    }
+
 }
 
 @media (max-width: 424px) {

@@ -8,6 +8,12 @@
     <div class="review-list-page">
         <h1>Guest Reviews</h1>
 
+        {% if user.is_authenticated %}
+            <div class="add-review">
+                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
+            </div>
+        {% endif %}
+        
         {% if reviews %}
             <div class="review-list">
                 {% for post in reviews %}
@@ -32,12 +38,6 @@
             </div>
         {% else %}
             <p>No reviews have been posted yet.</p>
-        {% endif %}
-
-        {% if user.is_authenticated %}
-            <div class="add-review">
-                <a href="{% url 'add_review' %}" class="btn">Post a Review</a>
-            </div>
         {% endif %}
     </div>
 {% endblock %}
