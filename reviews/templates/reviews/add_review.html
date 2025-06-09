@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Post a New Review</h2>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if form.errors %}
-    <ul>
-        {% for field in form %}
-            {% for error in field.errors %}
-                <li>{{ field.label }}: {{ error }}</li>
-            {% endfor %}
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <button type="submit">Submit Review</button>
-  </form>
+  <div class="spacing-top">
+    <h2>Post a New Review</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if form.errors %}
+      <ul>
+          {% for field in form %}
+              {% for error in field.errors %}
+                  <li>{{ field.label }}: {{ error }}</li>
+              {% endfor %}
+          {% endfor %}
+      </ul>
+      {% endif %}
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
   <a href="{% url 'review_list' %}">Back to reviews</a>
 {% endblock %}
