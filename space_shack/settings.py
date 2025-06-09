@@ -15,11 +15,7 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,8 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reviews.apps.ReviewsConfig',
     'whitenoise.runserver_nostatic',
-    'cloudinary',
-    'cloudinary_storage',
     'accounts',
     'bookings',
 ]
