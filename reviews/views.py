@@ -7,14 +7,17 @@ from django.shortcuts import get_object_or_404, redirect
 from .models import ReviewPost, Like
 from .models import Comment
 
+
 # landing page
 def index(request):
     return render(request, 'index.html')
+
 
 # Actual blog view
 def review_list(request):
     reviews = ReviewPost.objects.all()
     return render(request, 'reviews/review_list.html', {'reviews': reviews})
+
 
 @login_required
 def add_review(request):
@@ -29,6 +32,7 @@ def add_review(request):
         form = ReviewForm()
     return render(request, 'reviews/add_review.html', {'form': form})
 
+
 @login_required
 def review_detail(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
@@ -39,12 +43,12 @@ def review_detail(request, review_id):
     if request.method == 'POST':
         if 'like' in request.POST:
             if user_liked:
-                Like.objects.filter(user=request.user, post=review).delete()  # Unlike toggle
+                Like.objects.filter(user=request.user, post=review).delete()
             else:
                 Like.objects.create(user=request.user, post=review)
 
             return redirect('review_detail', review_id=review.id)
-   
+
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
@@ -63,6 +67,7 @@ def review_detail(request, review_id):
         'total_likes': review.likes.count(),
     })
 
+
 @login_required
 def toggle_like(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
@@ -75,6 +80,7 @@ def toggle_like(request, review_id):
         Like.objects.create(user=user, post=review)  # Add like
 
     return redirect('review_detail', review_id=review.id)
+
 
 @login_required
 def edit_review(request, review_id):
@@ -105,7 +111,9 @@ def delete_review(request, review_id):
         review.delete()
         return redirect('review_list')
 
-    return render(request, 'reviews/confirm_delete_review.html', {'review': review})
+    return render(request,
+                  'reviews/confirm_delete_review.html', {'review': review})
+
 
 @login_required
 def edit_comment(request, comment_id):
@@ -122,7 +130,9 @@ def edit_comment(request, comment_id):
     else:
         form = CommentForm(instance=comment)
 
-    return render(request, 'reviews/edit_comment.html', {'form': form, 'comment': comment})
+    return render(request,
+                  'reviews/edit_comment.html',
+                  {'form': form, 'comment': comment})
 
 
 @login_required
@@ -137,4 +147,6 @@ def delete_comment(request, comment_id):
         comment.delete()
         return redirect('review_detail', review_id=review_id)
 
-    return render(request, 'reviews/confirm_delete_comment.html', {'comment': comment})
+    return render(request,
+                  'reviews/confirm_delete_comment.html',
+                  {'comment': comment})

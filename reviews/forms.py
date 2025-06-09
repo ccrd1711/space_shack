@@ -27,4 +27,4 @@ class CommentForm(forms.ModelForm):
                 'rows': 4,
                 'style': 'resize: vertical;'
             }),
-}
+        }

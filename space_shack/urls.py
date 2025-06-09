@@ -20,19 +20,24 @@ from django.contrib.auth import views as auth_views
 from reviews import views
 from django.conf import settings
 from django.conf.urls.static import static
-from space_shack import views 
+from space_shack import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('accounts/', include('django.contrib.auth.urls')),  
-    path('accounts/', include('accounts.urls')),  
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
     path('reviews/', include('reviews.urls')),
     path('book/', include('bookings.urls')),
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),
-    path('about/', views.about, name='about'), 
+    path('accounts/login/',
+         auth_views.LoginView.as_view(
+             template_name='registration/login.html'), name='login'),
+    path('accounts/logout/',
+         auth_views.LogoutView.as_view(
+             template_name='registration/logged_out.html'), name='logout'),
+    path('about/', views.about, name='about'),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+    urlpatterns += static(
+        settings.STATIC_URL, document_root=settings.STATIC_ROOT)
