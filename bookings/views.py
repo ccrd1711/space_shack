@@ -4,21 +4,22 @@ from .models import Booking
 from datetime import timedelta
 from django.contrib.auth.decorators import login_required 
 from django.shortcuts import get_object_or_404
+from django.contrib import messages 
 
 # Create your views here.
 def book_shack(request):
+    form = BookingForm(request.POST or None)    #
+    
     if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
+        if not request.user.is_authenticated:
+            messages.error(request, "You must be logged in to book the Space Shack.")
+        elif form.is_valid():
             booking = form.save(commit=False)
             nights = (booking.check_out - booking.check_in).days
             booking.total_cost = nights * 5000
-            if request.user.is_authenticated:
-                booking.user = request.user
+            booking.user = request.user
             booking.save()
             return render(request, 'bookings/confirmation.html', {'booking': booking})
-    else:
-        form = BookingForm()
 
     return render(request, 'bookings/booking_form.html', {'form': form})
 

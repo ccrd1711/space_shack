@@ -13,6 +13,13 @@
 
             <button type="submit" class="btn">Book Now</button>
         </form>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="error">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
 {% endblock %} 
 </body>

@@ -461,4 +461,10 @@ button.btn:hover {
     background-color: #0056b3;
 }
 
+.messages .error {
+  color: red; /* FOR NON-SIGNED IN BOOKING ATTEMPTS */
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 /* MEDIA QUERIES */
