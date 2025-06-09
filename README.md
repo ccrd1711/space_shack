@@ -1,34 +1,57 @@
-"# space_shack" 
+# Space Shack on planet Phaedrus 17-11 website 
 
-Bugs so far
+![The Space Shack Website]
 
-Only on preview site, not live currently
+# Contents 
 
-Logging out produces a 500 server error, and logging back in does not take me to reviews like I want 
-- Adding redirect urls to settings.py, fixing line in space shack urls.py, 
+* [Introduction](#introduction)
 
-Adding a blog post took to anotjher 500 server error
-- Adding ReviewForm to views.py fixed this as error showed is as undefined - long day of coding - forgot to put it in!
+* [Deployment](#deployment-and-accessing-code-workspace)
+      
+* [My Own Deployment](#my-own-deployment)
 
-Adding a blog post then did not post it to the reviews page
-- I was looping over 'posts' not 'reviews' so was in limbo
+* [Design Development](#design-development)
 
-Booking dates was failing on testing - message saying can't compate datetime.datetime to datetime.date
-- Changed:
-"if check_in < timezone.now().date():"
-to
-"if check_in and check_in.date() < timezone.now().date():
-    self.add_error('check_in', 'Check-in cannot be in the past.')"
-in bookings/forms
-and adding 
-"if self.check_in and self.check_in.date() < timezone.now().date():
-    raise ValidationError("Check-in date cannot be in the past.")"
-to models.py 
-ensuring I was comparing date() to date()
+* [Wireframes](#wireframes)
 
-Likes were not showing on reviews individually after design change, and getting poster comments under a button to say when you've liked a review:
+* [Images](#images)
 
+* [Features](#features)
 
+* [Ideas going forward](ideas-going-forward)
 
-Features that were not implement but could be in future:
-User dashboard to see reviews
+* [Technologies Used](#technologies-used)
+
+* [Languages Used](#languages-used)
+
+* [External programs and libraries](#external-programs-or-libraries-used)
+
+* [Credits](#credits)
+
+* [Code Inspiration](#code-inspiration)
+
+* [Content](#content)
+
+* [Media](#media) 
+
+* [Acknowledgements](#acknowledgements)
+
+# Introduction 
+
+## A Brief Summary 
+
+Welcome to the Space Shack website - a simple booking and review portal for a fictional accommodation based on planet Phaedrus-1711. My daughter, 4, loves Space and recently has been going through a phase of want to learn everything about all the planets right after story time at night. One night at bed time she asked if we could "Go up there one day". So although the idea for project 3 went through many different phases, I think it began that night. 
+
+## Deployment and Accessing Code Workspace 
+
+## My Own Deployment
+
+# Design Development
+
+### Wireframes 
+
+## Images 
+All the images in this project were made using my own prompts given to ChatGPT. I generally believe we all need to harness the abilities of AI, but this project simply wouldn't have been possible in a creative way for obvious reasons without it. I had a very clear image of my landing page from day 1 (See Design) and the rest followed from there. The only tricky part of the prompts was trying to keep the "layout" of the planet uniformed through different prompts that created different angles, but I think I've succeeded in the most part. 
+
+# Features 
+
