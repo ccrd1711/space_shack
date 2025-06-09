@@ -20,7 +20,27 @@
 
 * [Bugs/Issues/Fixes](#bugsissuesfixes)
 
-This section contains a range of issues that were solved, including simple ones at project inception to more nuanced/complex ones late in development. What you see here is in chronological order so it gives you an idea of which direction I had my development going in. If any bugs remain at the end of the project that haven't been rectified they will be in their appropriate section. 
+# Validators 
+
+## HTML 
+
+HTML validation was completed using [W3C Validator](https://validator.w3.org). In past projects I have copied and pasted my HTML directly from the files in VS Code in to the validator to test. This time, due to having base.html and most html pages in my project extending from base.html, I went to every single page on the website and viewed the source code. I copied and pasted this html in to the validator. Every single page  passed with no errors.
+
+## CSS 
+
+CSS validation was completed using [the W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/validator), no errors were found. This one was completed as normal, by copying my CSS file input into the direct input box. 
+
+## Javascript 
+
+Javascript validation was completed using [JSHint](https://jshint.com/) and both files came back with no errors found.
+
+## Python
+
+Python PEP8 compliance testing and validation was completed using [the CI Python Linter](https://pep8ci.herokuapp.com). Every single py file was input on 9/6 after reaching a point in development where likely no more changes were to be made apart from comments. All files were amended and are now compliant with no errors. 
+
+# Bugs/Issues/Fixes
+
+This section contains a range of issues that were solved, including simple ones at project inception to more nuanced/complex ones late in development. What you see here is in chronological order so it gives you an idea of which direction I had my development going in. If any bugs remain at the end of the project that haven't been rectified they will be in their appropriate section. There were likely others through development that haven't been recorded fully due to being so focused on fixing them and forgetting to note them down at the time. 
 
  Fixed bugs | What happened? | Solution 
 -- | -- | -- |
