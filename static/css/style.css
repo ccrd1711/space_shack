@@ -13,7 +13,7 @@ button {
 
 /* PHAEDRUS BGROUND ON MULTIPLE BASIC PAGES */
 .phaedrus-bg {
-    background-image: url('/static/images/phaedrus-bg.png');
+    background-image: url('/static/images/phaedrus-full.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
