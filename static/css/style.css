@@ -11,6 +11,17 @@ button {
     font-family: inherit;
 }
 
+/* PHAEDRUS BGROUND ON MULTIPLE BASIC PAGES */
+.phaedrus-bg {
+    background-image: url('/static/images/phaedrus-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 /* SPACING ON 9 PAGES LATE IN F.END DEV*/
 
 .spacing-top {
