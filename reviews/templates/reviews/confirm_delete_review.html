@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% block body_class %}class="review-dark"{% endblock %}
+
 {% block content %}
+
   <div class="spacing-top phaedrus.bg">
     <h1>Delete Review</h1>
     <p>Are you sure you want to delete: "{{ review.title }}"?</p>

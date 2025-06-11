@@ -30,8 +30,8 @@ button {
 /* SPACING ON 9 PAGES LATE IN F.END DEV*/
 
 .spacing-top { 
-   /* margin-top: 80px; CONSIDER?? */
-    /* margin-left: 30px; */
+    margin-top: 80px;
+    margin-left: 30px;
 }
 
 
@@ -40,7 +40,6 @@ header nav {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     position: fixed;
-    /* text-align: center; */
     top: 0;
     width: 100%;
     z-index: 100;
@@ -144,7 +143,6 @@ header nav ul li a:hover {
 }
 
 .landing-text {
-    /* max-width: 50%; - consider */ 
     z-index: 10;
 }
 
@@ -229,17 +227,10 @@ footer {
     background-image: url('/static/images/reviews-pic.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
 }
 
 .review-list-page {
-    align-items: center;
-    min-height: 80vh;
     padding-left: 5%; 
-    padding-right: 5%;
 }
 
 .review-list {
@@ -274,15 +265,9 @@ footer {
     color: gold;
 }
 
-/* READ MORE BUTTON */
-.read-more-link {
-    color: white;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.read-more-link:hover {
-    color: #FFD700;
+body.review-dark {
+  background-color: #031430;
+  color: #fff;
 }
 
 .review-list-page h1 {
@@ -589,7 +574,6 @@ button.btn:hover {
         margin-left: 0px;
         margin-top: 30px;
     }
-
 }
 
 @media (min-width: 1024px) {
@@ -610,24 +594,27 @@ button.btn:hover {
     }
 
     .review-list {
-        z-index: 0;
-        padding-bottom: 100px;
+    z-index: 0;
+    padding-bottom: 100px;
+    width: 100%; 
+    max-width: 900px;
     }
 }
 
 @media (max-width: 424px) {
-
     .getaway-msg {
         margin-top: 300px;
     }
 }
 
+/* HELP TEXT STYLING ON SIGNUP ON SMALL SCREENS */
 @media (max-width: 767px) {
     .helptext {
         font-size: 12px;
     }
 }
 
+/* KEEP HOME BUTTONS SMALL - AVOID SQUASH AND OVERLAP */
 @media (max-width: 374px) {
   .buttons .btn {
     font-size: 0.75rem;
