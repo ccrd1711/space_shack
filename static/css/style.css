@@ -1,3 +1,17 @@
+/* SITE LOGO */
+
+.logo-img {
+  height: 30px; /* Tweak as needed */
+  width: auto;
+  margin-right: 15px;
+}
+
+.logo-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 /* GENERAL STYLES - SITE CONSISTENCY */
 html, body {
     height: 100%;
@@ -187,6 +201,37 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000; /* or match your current footer bg */
+  color: white;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  margin: 0;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white; /* or whatever fits your footer */
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #FFD700; /* or whatever hover color you like */
+}
+
 
 /* ABOUT PAGE STYLING */
 
@@ -688,6 +733,21 @@ button.btn:hover {
         color: white;
         text-decoration: none;
     }
+
+     .footer-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 16px;
+    margin-left: 10px;
+  }
 }
 
 /* KEEP HOME BUTTONS SMALL - AVOID SQUASH AND OVERLAP */

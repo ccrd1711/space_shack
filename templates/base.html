@@ -19,12 +19,18 @@
     <!-- Favicon-->
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
 
+    <!-- Font Awesome kit -->
+    <script src="https://kit.fontawesome.com/cae9254a7d.js" crossorigin="anonymous"></script>
+
     <title>Space Shack</title>
 
 </head>
 <body {% block body_class %}{%endblock %}>
     <header>
         <nav>
+            <a href="{% url 'index' %}" class="logo-link">
+                <img src="{% static 'images/shack-logo.png' %}" alt="Space Shack Logo" class="logo-img">
+            </a>
             <div class="burger" id="burger">☰</div>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -52,10 +58,18 @@
 
     {% block content %}{% endblock %}
 
-    <footer>
-        <p>&copy; 2025 Space Shack. All Rights Reserved.</p>
+    <footer class="footer-bar">
+        <p class="footer-text">&copy; 2025 Space Shack. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
     </footer>
+
     {% block scripts %}{% endblock %}
-<script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>
