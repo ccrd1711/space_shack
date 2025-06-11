@@ -1,6 +1,6 @@
-# Space Shack on planet Phaedrus-1711 website 
+# Space Shack on planet Phaedrus-1711 website README.md
 
-![The Space Shack Website amiresponsive to go here when site full complete]
+![The Space Shack Website amiresponsive image](/docs/images/amiresponsive-shack.png)
 
 The live Space Shack site can be viewed [here](https://space-shack-a7e1db1b7daa.herokuapp.com/)
 
@@ -10,7 +10,7 @@ The live Space Shack site can be viewed [here](https://space-shack-a7e1db1b7daa.
 * [Site objectives](#site-objectives)
 * [User Experience](#user-experience)
     * [Target Audience](#target-audience)
-    * [User Stores](#user-stories)
+    * [User Stories](#user-stories)
 * [Design Development](#design-development)
     * [Wireframes](#wireframes)
     * [Images](#images)
@@ -60,28 +60,27 @@ Ultimately, the site provides a playful but fully functional simulation of a fut
 
 ## User Stories 
 
+The manual testing for these can be found in the [Testing document](/TESTING.md)
+
 ### New Visitor Goals 
 
-- Gain an understanding of what Phaedrus-1711 and the Space Shack experience offers, through an immersive landing page and rich descriptions.
+- As a new visitor I want to gain an understanding of what Phaedrus-1711 and the Space Shack experience offers, through an immersive landing page and rich descriptions.
 
-- Successfully navigate the site to explore reviews and comments from previous “guests.”
+- As a new visitor I want to successfully navigate the site to explore reviews and comments from previous “guests.”
 
-- Register for an account to become part of the interplanetary travel community.
+- As a new visitor I want to register for an account to become part of the interplanetary travel community.
 
-- Engage with site content by reading stories, submitting their own reviews, and optionally making a (rather expensive) booking.
+- As a new visitor I want to make a (rather expensive) booking securely and then be able to leave my own reviews.
 
 ### Existing Visitor Goals 
 
-- Log in and out of their account securely.
+- As a returning user I want to log in and out of their account securely.
 
-- Submit, view, edit, or delete their own reviews and comments.
+- As a returning user I want to submit, view, edit, or delete their own reviews and comments.
 
-- Interact with new and returning users by commenting on reviews and contributing to the community feel.
+- As a returning user I want to enjoy a consistent and responsive user interface across devices, reinforcing a seamless and immersive space tourism experience.
 
-- Submit and manage a booking enquiry, simulating a luxury stay on Phaedrus-1711.
-
-- Enjoy a consistent and responsive user interface across devices, reinforcing a seamless and immersive space tourism experience.
-
+- As a returning user I want to view and manage my upcoming bookings, so I can keep track of my interplanetary travel plans with ease.
 
 # Design Development
 

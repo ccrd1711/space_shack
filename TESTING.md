@@ -1,3 +1,7 @@
+# Space Shack on planet Phaedrus-1711 website Testing.md
+
+![The Space Shack Website amiresponsive image](/docs/images/amiresponsive-shack.png)
+
 # Testing Contents Menu 
 
 * [Automated Testing](#automated-testing)
@@ -49,6 +53,25 @@ Here are the reports I got from running Lighthouse reports on desktop and mobile
 
 # Manual Testing 
 
+## User Stories 
+
+### New visitors to the site 
+
+| Goal | How is it achieved? | Pass or Fail | 
+| --- | :---: | ---: |
+|As a new visitor I want to gain an understanding of what Phaedrus-1711 and the Space Shack experience offers, through an immersive landing page and rich descriptions. | The user is welcomed by a vibrant and cosy-feeling landing page and the About page provides more immersive information on their potential stay at the Shack.| Pass 
+|As a new visitor I want to successfully navigate the site to explore reviews and comments from previous “guests.” | All users are able to *view* the reviews, and can see who it was written by, the content and star rating.| Pass 
+|As a new visitor I want to register for an account to become part of the interplanetary travel community.| Continuing on from the previous story, users can go one further and register which allows them full interactivity and can leave comments and like reviews.| Pass
+|As a new visitor I want to make a (rather expensive) booking securely and then be able to leave my own reviews.| You are not able to leave a review or book the Shack on the site without being logged in. The form is fully interactive so that it will snuff out typo errors on email fields, and avoids double bookings.| Pass
+
+### Returning visitors to the site 
+
+| Goal | How is it achieved? | Pass or Fail | 
+| --- | :---: | ---: |
+|As a returning user I want to log in and out of their account securely.| Users have a login button brightly signposted in the nav bar, and a log out option in the dropdown under their username.| Pass 
+|As a returning user I want to submit, view, edit, or delete their own reviews and comments.| As mentioned above, this is a continuation. All submissions, views, edits and deletes have their own dedicated screens.| Pass 
+|As a returning user I want to enjoy a consistent and responsive user interface across devices, reinforcing a seamless and immersive space tourism experience.| The site is fully functional and responsive on all screen sizes and is designed for ease of navigation| Pass 
+|As a returning user I want to view and manage my upcoming bookings, so I can keep track of my interplanetary travel plans with ease.| In the dropdown under the user name is a section for My Bookings where any booked trips can be removed or amended as necessary| Pass 
 
 
 # Bugs/Issues/Fixes
