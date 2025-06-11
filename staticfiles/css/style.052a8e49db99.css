@@ -13,7 +13,7 @@ button {
 
 /* PHAEDRUS BGROUND ON MULTIPLE BASIC PAGES */
 .phaedrus-bg {
-    background-image: url('/static/images/phaedrus-full.png');
+    background-image: url("/static/images/phaedrus-full.7a65a65db642.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -131,7 +131,7 @@ header nav ul li a:hover {
     align-items: center;
     height: 100vh;
     background-color: #111;
-    background-image: url('/static/images/shack-bground.png');
+    background-image: url("/static/images/shack-bground.508efdddf15b.png");
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -201,7 +201,7 @@ footer {
 
 .about-container .image {
     flex: 1;
-    background-image: url('/static/images/matter-lake.png');
+    background-image: url("/static/images/matter-lake.07aa4d4446aa.png");
     background-size: cover;
     background-position: left center;
     height: 100%; 
@@ -220,7 +220,7 @@ footer {
 /* REVIEWS LIST PAGE STYLING */
 
 .review-page {
-    background-image: url('/static/images/reviews-pic.png');
+    background-image: url("/static/images/reviews-pic.95dccd70d5de.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -420,7 +420,7 @@ footer {
 /* BOOKING FORM PAGE STYLING */
 
 .booking-page {
-    background-image: url('/static/images/shack-inside.png');
+    background-image: url("/static/images/shack-inside.3b7af7caff70.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
