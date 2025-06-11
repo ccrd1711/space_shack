@@ -10,6 +10,6 @@
       {{ form.body }}
       <button type="submit">Save Changes</button>
     </form>
-    <a href="{% url 'review_detail' review_id=comment.post.id %}">Cancel</a>
+    <a href="{% url 'review_detail' review_id=comment.post.id %}" class="btn small">Cancel</a>
   </div>
   {% endblock %}

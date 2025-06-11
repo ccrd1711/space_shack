@@ -8,10 +8,10 @@
         <p>{{ booking.check_in }} to {{ booking.check_out }} – £{{ booking.total_cost }}</p>
 
         <!-- Cancel link (goes to confirmation page) -->
-        <a href="{% url 'cancel_booking' booking.id %}" class="btn cancel-btn">Cancel Booking</a>
+        <a href="{% url 'cancel_booking' booking.id %}" class="btn small">Cancel Booking</a>
 
         <!-- Edit button -->
-        <a href="{% url 'edit_booking' booking.id %}" class="btn edit-btn">Edit Booking</a>
+        <a href="{% url 'edit_booking' booking.id %}" class="btn small">Edit Booking</a>
       </div>
     {% empty %}
       <p>You have no bookings.</p>
