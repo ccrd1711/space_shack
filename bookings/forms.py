@@ -15,7 +15,7 @@ class BookingForm(forms.ModelForm):
         }
 
      # Allow only common email domains
-     def clean_email(self):
+    def clean_email(self):
         email = self.cleaned_data.get('email') 
         if not re.match(r".+@.+\.(com|net|org|io|co\.uk|gov|edu)$", email.lower()):
             raise ValidationError("Please enter a valid email domain (e.g. .com, .org).")
