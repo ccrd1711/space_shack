@@ -5,12 +5,17 @@ html, body {
     overflow-y: auto;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Orbitron', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
     color: white;
+    overflow-x: hidden;
 }
 
 button {
@@ -81,7 +86,6 @@ header nav ul li a:hover {
     font-size: 2rem;
     color: white;
     cursor: pointer;
-    margin-right: 20px;
 }
 
 /* DROPDOWN CONTAINER STYLING */
@@ -490,10 +494,9 @@ button.btn:hover {
 @media (max-width: 1023px) {
     .burger {
         display: block;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: white;
         cursor: pointer;
-        margin-right: 40px;
         margin-left: auto;
     }
 
@@ -551,7 +554,7 @@ button.btn:hover {
 
     .about-container .text h1 {
         margin-top: 40px;
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .about-container .text h2 {
@@ -559,13 +562,14 @@ button.btn:hover {
     }
 
     .about-container .text p {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     footer {
         padding: 0px;
     }
 
+    /* Review page on smaller screens */
     .review-list-page h1 {
         padding-top: 75px;
     }
@@ -573,6 +577,10 @@ button.btn:hover {
     .spacing-top {
         margin-left: 0px;
         margin-top: 30px;
+    }
+
+    header nav ul:last-child {
+    margin-right: 0px;
     }
 }
 
@@ -611,6 +619,44 @@ button.btn:hover {
 @media (max-width: 767px) {
     .helptext {
         font-size: 12px;
+    }
+
+    .review-list-page {
+    padding: 1rem;
+    }
+
+    .review-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    }
+
+    .review-item h2 a {
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.6rem;
+    text-align: center;
+    }
+
+    .review-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    }
+
+    .review-stars {
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    }
+
+    .read-more-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
     }
 }
 
