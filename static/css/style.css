@@ -1,4 +1,10 @@
 /* GENERAL STYLES - SITE CONSISTENCY */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+}
+
 body {
     font-family: 'Orbitron', Arial, sans-serif;
     margin: 0;
@@ -25,7 +31,7 @@ button {
 
 .spacing-top { 
    /* margin-top: 80px; CONSIDER?? */
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 
 
@@ -209,7 +215,8 @@ footer {
 
 .about-container h1 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px; 
 }
 
 .about-container p {
@@ -471,6 +478,27 @@ button.btn:hover {
   font-weight: bold;
 }
 
+/* SIGN UP FORM */
+
+.form-row {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.helptext {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.4rem;
+}
+
+
 /* MEDIA QUERIES */
 
 /* Show burger icon and hide nav links under 1024px */
@@ -525,14 +553,14 @@ button.btn:hover {
     
     .about-container {
         flex-direction: column;
-        height: auto; /* Let it grow naturally */
+        height: 100vh;  
     }
 
     .about-container .image {
         flex: unset; 
         width: 100%;
         min-height: 350px; 
-        height: 250px; /* Adjust for mobile view */
+        height: 250px; 
         background-position: center;
     }
 
@@ -564,9 +592,23 @@ button.btn:hover {
 
 }
 
+@media (min-width: 1024px) {
+    .about-container {
+        display: block;
+        height: 100vh;
+        align-items: center;
+    }
+}
+
 @media (max-width: 424px) {
 
     .getaway-msg {
         margin-top: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .helptext {
+        font-size: 12px;
     }
 }
