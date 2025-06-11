@@ -32,13 +32,10 @@ button {
     padding: 40px;
 }
 
-/* SPACING ON 9 PAGES LATE IN F.END DEV*/
-
 .spacing-top { 
     margin-top: 80px;
     margin-left: 30px;
 }
-
 
 /* NAVIGATION BAR UNIVERSAL */
 header nav {
@@ -125,17 +122,21 @@ header nav ul li a:hover {
     background-color: #575757;
 }
 
+/* SHOWS DROPDOWN ON HOVER */
 .dropdown:hover .dropdown-content {
-    display: block; /* SHOWS DROPDOWN ON HOVER */
+    display: block;
 }
 
 .dropdown:hover .dropbtn {
     text-decoration: underline;
 }
 
+h1 {
+    color:#FFD700;
+}
+
 /* HOME PAGE STYLING */
 #landing {
-    /*display: flex; - consider */
     justify-content: space-between;
     align-items: center;
     height: 100vh;
@@ -152,7 +153,6 @@ header nav ul li a:hover {
 
 .landing-text h1 {
     font-size: 4em;
-    color: #FFD700;
     margin-top:100px; 
 }
 
@@ -161,7 +161,7 @@ header nav ul li a:hover {
     margin-top: 350px;
 }
 
-/* ALL BUTTONS UNIVERSAL */
+/* LANDING BUTTONS */
 .buttons .btn {
     font-family: 'Orbitron', Arial, sans-serif;
     padding: 15px 30px;
@@ -220,6 +220,10 @@ footer {
     margin-top: 50px; 
 }
 
+h2 {
+    color: #FFD700;
+}
+
 .about-container p {
     font-size: 13px;
     line-height: 1.6;
@@ -276,14 +280,13 @@ body.review-dark {
 
 .review-list-page h1 {
     padding-top: 100px;
-    color: #FFD700;
 }
 
 .review-list-page .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: #FFD700;
+    color: rgb(8, 8, 8);
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
@@ -319,6 +322,23 @@ body.review-dark {
 .review-list-page hr {
     margin-top: 20px;
     border: 0.5px solid #ddd;
+}
+
+.read-more-link,
+.btn.small {
+  color: white;
+  text-decoration: none;
+}
+
+.read-more-link:hover,
+.btn.small:hover {
+  text-decoration: underline;
+}
+
+/* STOPS LINK GOING PURPLE AFTER CLICKING */
+.read-more-link:visited,
+.btn.small:visited {
+  color: white;
 }
 
 /* INDIVIDUAL REVIEWS PAGE WITH HEART */
@@ -437,7 +457,6 @@ body.review-dark {
 
 .container h1 {
     text-align: center;
-    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -574,13 +593,14 @@ button.btn:hover {
         padding-top: 75px;
     }
 
-    .spacing-top {
-        margin-left: 0px;
-        margin-top: 30px;
-    }
-
     header nav ul:last-child {
     margin-right: 0px;
+    }
+
+    .review-detail-container {
+        min-height: 100vh;
+        overflow-y: visible;
+        padding-bottom: 3rem;
     }
 }
 
@@ -598,7 +618,6 @@ button.btn:hover {
 
     .review-list-page h1 {
     padding-top: 50px;
-    color: #FFD700;
     }
 
     .review-list {
@@ -629,41 +648,43 @@ button.btn:hover {
     }
 
     .review-list-page {
-    padding: 1rem;
+        padding: 1rem;
     }
 
     .review-item {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border-radius: 8px;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 8px;
     }
 
     .review-item h2 a {
-    display: block;
-    font-size: 1.1rem;
-    padding: 0.4rem 0.6rem;
-    text-align: center;
+        display: block;
+        font-size: 1.1rem;
+        padding: 0.4rem 0.6rem;
+        text-align: center;
     }
 
     .review-item p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
 
     .review-stars {
-    display: inline-block;
-    font-size: 1rem;
-    margin-top: 0.5rem;
+        display: inline-block;
+        font-size: 1rem;
+        margin-top: 0.5rem;
     }
 
     .read-more-link {
-    display: inline-block;
-    margin-top: 0.6rem;
-    font-size: 0.85rem;
+        display: inline-block;
+        margin-top: 0.6rem;
+        font-size: 0.85rem;
+        color: white;
+        text-decoration: none;
     }
 }
 
