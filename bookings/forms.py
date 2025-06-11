@@ -1,6 +1,8 @@
 from django import forms
 from .models import Booking
 from django.utils import timezone
+from django.core.exceptions import ValidationError
+import re
 
 
 class BookingForm(forms.ModelForm):
@@ -11,6 +13,13 @@ class BookingForm(forms.ModelForm):
             'check_in': forms.DateInput(attrs={'type': 'date'}),
             'check_out': forms.DateInput(attrs={'type': 'date'}),
         }
+
+     # Allow only common email domains
+     def clean_email(self):
+        email = self.cleaned_data.get('email') 
+        if not re.match(r".+@.+\.(com|net|org|io|co\.uk|gov|edu)$", email.lower()):
+            raise ValidationError("Please enter a valid email domain (e.g. .com, .org).")
+        return email
 
     def clean(self):
         cleaned_data = super().clean()
