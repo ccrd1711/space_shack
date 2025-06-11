@@ -566,6 +566,11 @@ button.btn:hover {
         padding-top: 75px;
     }
 
+    .spacing-top {
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+
 }
 
 @media (max-width: 424px) {
