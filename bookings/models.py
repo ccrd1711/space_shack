@@ -19,15 +19,24 @@ class Booking(models.Model):
         User, on_delete=models.CASCADE, null=True, blank=True)
 
     def clean(self):
-        if self.number_of_guests > 2:
-            raise ValidationError("Number of guests cannot exceed 2.")
+        if self.number_of_guests is not None:
+            if self.number_of_guests > 2:
+                raise ValidationError("Number of guests cannot exceed 2.")
+        
+            if self.number_of_guests < 1:
+                raise ValidationError("You must book for at least 1 guest.")
 
-        if self.check_in and self.check_out:
-            if self.check_in >= self.check_out:
-                raise ValidationError(
+            if self.check_in and self.check_out:
+                if self.check_in >= self.check_out:
+                    raise ValidationError(
                     "Check-out date must be after check-in date.")
+            
             if self.check_in.date() < timezone.now().date():
-                raise ValidationError("Check-in date cannot be in the past.")
+                raise ValidationError(
+                    "Check-in date cannot be in the past.")
+            
+            if (self.check_out - self.check_in).days > 7:
+                raise ValidationError("Booking cannot exceed 7 days.") 
 
             overlapping_bookings = Booking.objects.filter(
                 check_out__gt=self.check_in,

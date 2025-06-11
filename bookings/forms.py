@@ -27,8 +27,11 @@ class BookingForm(forms.ModelForm):
         check_out = cleaned_data.get('check_out')
         guests = cleaned_data.get('number_of_guests')
 
-        if guests and guests > 2:
-            self.add_error('number_of_guests', 'Maximum 2 guests allowed.')
+        if guests:
+            if guests > 2:
+                self.add_error('number_of_guests', 'Maximum 2 guests allowed.')
+            elif guests < 1:
+                self.add_error('number_of_guests', 'You must book for at least 1 guest.')
 
         if check_in and check_out:
             if check_in >= check_out:

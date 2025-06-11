@@ -7,14 +7,12 @@ from django.contrib import messages
 
 
 # Create your views here.
+@login_required
 def book_shack(request):
     form = BookingForm(request.POST or None)    #
 
     if request.method == 'POST':
-        if not request.user.is_authenticated:
-            messages.error(request,
-                           "You must be logged in to book the Space Shack.")
-        elif form.is_valid():
+        if form.is_valid():
             booking = form.save(commit=False)
             nights = (booking.check_out - booking.check_in).days
             booking.total_cost = nights * 5000

@@ -63,6 +63,7 @@ Here are the reports I got from running Lighthouse reports on desktop and mobile
 |As a new visitor I want to successfully navigate the site to explore reviews and comments from previous “guests.” | All users are able to *view* the reviews, and can see who it was written by, the content and star rating.| Pass 
 |As a new visitor I want to register for an account to become part of the interplanetary travel community.| Continuing on from the previous story, users can go one further and register which allows them full interactivity and can leave comments and like reviews.| Pass
 |As a new visitor I want to make a (rather expensive) booking securely and then be able to leave my own reviews.| You are not able to leave a review or book the Shack on the site without being logged in. The form is fully interactive so that it will snuff out typo errors on email fields, and avoids double bookings.| Pass
+|As a new visitor I want to make sure I can follow this accommodation in other ways so that I can get updates from elsewhere.| There are social media icons along the bottom of every page to take the user to relevant social channels for updates.| Pass 
 
 ### Returning visitors to the site 
 
@@ -71,6 +72,7 @@ Here are the reports I got from running Lighthouse reports on desktop and mobile
 |As a returning user I want to log in and out of their account securely.| Users have a login button brightly signposted in the nav bar, and a log out option in the dropdown under their username.| Pass 
 |As a returning user I want to submit, view, edit, or delete their own reviews and comments.| As mentioned above, this is a continuation. All submissions, views, edits and deletes have their own dedicated screens.| Pass 
 |As a returning user I want to enjoy a consistent and responsive user interface across devices, reinforcing a seamless and immersive space tourism experience.| The site is fully functional and responsive on all screen sizes and is designed for ease of navigation| Pass 
+|As a returning user I want to enjoy navigating through the site on mobile as well as desktop.| There is an accessible and well highlighted dropdown to take you to all elements of the site plus an icon in the top left to take you to the index page quicker.| Pass
 |As a returning user I want to view and manage my upcoming bookings, so I can keep track of my interplanetary travel plans with ease.| In the dropdown under the user name is a section for My Bookings where any booked trips can be removed or amended as necessary| Pass 
 
 

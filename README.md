@@ -72,6 +72,8 @@ The manual testing for these can be found in the [Testing document](/TESTING.md)
 
 - As a new visitor I want to make a (rather expensive) booking securely and then be able to leave my own reviews.
 
+- As a new visitor I want to make sure I can follow this accommodation in other ways so that I can get updates from elsewhere. 
+
 ### Existing Visitor Goals 
 
 - As a returning user I want to log in and out of their account securely.
@@ -79,6 +81,8 @@ The manual testing for these can be found in the [Testing document](/TESTING.md)
 - As a returning user I want to submit, view, edit, or delete their own reviews and comments.
 
 - As a returning user I want to enjoy a consistent and responsive user interface across devices, reinforcing a seamless and immersive space tourism experience.
+
+- As a returning user I want to enjoy navigating through the site on mobile as well as desktop.
 
 - As a returning user I want to view and manage my upcoming bookings, so I can keep track of my interplanetary travel plans with ease.
 
