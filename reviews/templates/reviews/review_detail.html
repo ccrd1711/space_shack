@@ -59,6 +59,7 @@
         <h3>Comments</h3>
         <form method="POST">
             {% csrf_token %}
+            {{ form.body.errors}}
             {{ form.body }}
             <button type="submit" class="btn">Add Comment</button>
         </form>
