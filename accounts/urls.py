@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 
-
+# URL patterns for user login, logout, and signup functionality
 urlpatterns = [
     path(
         'login/',

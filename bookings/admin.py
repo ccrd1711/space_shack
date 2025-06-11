@@ -3,6 +3,8 @@ from .models import Booking
 
 
 # Register your models here.
+
+# Registers booking model with admin display, filter and search
 class BookingAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'email', 'check_in', 'check_out', 'number_of_guests',

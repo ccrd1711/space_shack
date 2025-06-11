@@ -22,6 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from space_shack import views
 
+# Main URL configuration for the space_shack project
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),

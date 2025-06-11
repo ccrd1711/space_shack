@@ -4,13 +4,15 @@ from django.contrib.auth import login
 
 
 # Create your views here.
+
+# User signup view, saving user and logging in if valid
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # Logs the user in after signup
-            return redirect('review_list')  # or wherever you want to send them
+            login(request, user)
+            return redirect('review_list')
     else:
         form = SignUpForm()
     return render(request, 'accounts/signup.html', {'form': form})

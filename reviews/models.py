@@ -5,6 +5,8 @@ from django.utils import timezone
 
 
 # Create your models here.
+
+# Model for user-submitted reviews with rating, slug and approval
 class ReviewPost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(unique=True, blank=True, max_length=200)
@@ -39,6 +41,8 @@ class ReviewPost(models.Model):
     def total_likes(self):
         return self.likes.count()
 
+# Model for comments linked to a specific review post and user
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -51,6 +55,7 @@ class Comment(models.Model):
         return f'Comment by {self.author} on {self.post}'
 
 
+# Model for tracking likes on posts
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(

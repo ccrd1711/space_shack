@@ -7,6 +7,8 @@ from django.contrib import messages
 
 
 # Create your views here.
+
+# Handles shack booking form submission, calculates total cost
 @login_required
 def book_shack(request):
     form = BookingForm(request.POST or None)    #
@@ -24,6 +26,7 @@ def book_shack(request):
     return render(request, 'bookings/booking_form.html', {'form': form})
 
 
+# Displays all bookings made by logged in user
 @login_required
 def my_bookings(request):
     bookings = Booking.objects.filter(
@@ -31,6 +34,7 @@ def my_bookings(request):
     return render(request, 'bookings/my_bookings.html', {'bookings': bookings})
 
 
+# Allows logged in users to cancel a specific booking
 @login_required
 def cancel_booking(request, booking_id):
     print("VIEW HIT:", request.method)
@@ -44,6 +48,7 @@ def cancel_booking(request, booking_id):
                   'bookings/confirm_cancel.html', {'booking': booking})
 
 
+# Allows logged in users to edit a specific booking, updating total cost
 @login_required
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)

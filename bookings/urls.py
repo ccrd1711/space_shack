@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+# URL patterns for booking the shack, viewing bookings, and managing them
 urlpatterns = [
     path('', views.book_shack, name='book_shack'),
     path('my/', views.my_bookings, name='my_bookings'),

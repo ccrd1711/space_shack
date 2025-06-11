@@ -8,17 +8,18 @@ from .models import ReviewPost, Like
 from .models import Comment
 
 
-# landing page
+# Renders landing page
 def index(request):
     return render(request, 'index.html')
 
 
-# Actual blog view
+# Displays a list of all reviews
 def review_list(request):
     reviews = ReviewPost.objects.all()
     return render(request, 'reviews/review_list.html', {'reviews': reviews})
 
 
+# Handles creation of new reviews by logged in users
 @login_required
 def add_review(request):
     if request.method == 'POST':
@@ -33,6 +34,7 @@ def add_review(request):
     return render(request, 'reviews/add_review.html', {'form': form})
 
 
+# Shows single review with comments, handles comment sub and likes
 @login_required
 def review_detail(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
@@ -68,6 +70,7 @@ def review_detail(request, review_id):
     })
 
 
+# Toggles like status for a given review by the current user
 @login_required
 def toggle_like(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
@@ -82,6 +85,7 @@ def toggle_like(request, review_id):
     return redirect('review_detail', review_id=review.id)
 
 
+# Allows the review author to edit their review
 @login_required
 def edit_review(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
@@ -100,6 +104,7 @@ def edit_review(request, review_id):
     return render(request, 'reviews/edit_review.html', {'form': form})
 
 
+# Allows the review author to delete their review
 @login_required
 def delete_review(request, review_id):
     review = get_object_or_404(ReviewPost, id=review_id)
@@ -115,6 +120,7 @@ def delete_review(request, review_id):
                   'reviews/confirm_delete_review.html', {'review': review})
 
 
+# Allows the comment author to edit their comment
 @login_required
 def edit_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
@@ -135,6 +141,7 @@ def edit_comment(request, comment_id):
                   {'form': form, 'comment': comment})
 
 
+# Allows the comment author to delete their comment
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)

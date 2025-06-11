@@ -3,6 +3,7 @@ from .models import ReviewPost
 from .models import Comment
 
 
+# Form for submitting a review, including title, content, and rating
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = ReviewPost
@@ -17,6 +18,7 @@ class ReviewForm(forms.ModelForm):
         }
 
 
+# Form for submitting a comment with styled textarea input
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
