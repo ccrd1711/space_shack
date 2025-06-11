@@ -1,24 +1,19 @@
 # Testing Contents Menu 
 
 * [Automated Testing](#automated-testing)
-
-* [Validators](#validators)
-
-* [Lighthouse](#lighthouse)
+    * [Validators](#validators)
+    * [Lighthouse](#lighthouse)
 
 * [Manual Testing](#manual-testing)
-
-* [User Stories](#user-stories)
-
-* [New Visitors](#new-visitors-to-the-site)
-
-* [Returning Visitors](#returning-visitors)
-
-* [New Visitor Testing](#new-visitor-testing)
-
-* [Return Visitor Testing](#returning-visitor-testing)
+    * [User Stories](#user-stories)
+    * [New Visitors](#new-visitors-to-the-site)
+    * [Returning Visitors](#returning-visitors)
+    * [New Visitor Testing](#new-visitor-testing)
+    * [Return Visitor Testing](#returning-visitor-testing)
 
 * [Bugs/Issues/Fixes](#bugsissuesfixes)
+
+* [Responsive Tests](#responsive-tests)
 
 # Automated Testing
 
@@ -41,6 +36,16 @@ Javascript validation was completed using [JSHint](https://jshint.com/) and both
 Python PEP8 compliance testing and validation was completed using [the CI Python Linter](https://pep8ci.herokuapp.com). Every single py file was input on 9/6 after reaching a point in development where likely no more changes were to be made apart from comments. All files were amended and are now compliant with no errors. 
 
 ## Lighthouse 
+
+Here are the reports I got from running Lighthouse reports on desktop and mobile 
+
+### Desktop
+
+![A screenshot of the results of lighthouse testing on desktop](/docs/images/lighthouse/desktop%20index%20lighthouse.png)
+
+### Mobile 
+
+![A screenshot of the results of Lighthouse testing on mobile devices](/docs/images/lighthouse/mobile-lighthouse-report.png)
 
 # Manual Testing 
 

@@ -1,4 +1,4 @@
-# Space Shack on planet Phaedrus 17-11 website 
+# Space Shack on planet Phaedrus-1711 website 
 
 ![The Space Shack Website amiresponsive to go here when site full complete]
 
@@ -21,12 +21,11 @@ The live Space Shack site can be viewed [here](https://space-shack-a7e1db1b7daa.
 * [Technologies Used](#technologies-used)
     * [Languages Used](#languages-used)
     * [External programs and libraries](#external-programs-or-libraries-used)
-* [Testing](#testing)
+* [Testing File](#testing-file)
 * [Deployment](#deployment-and-accessing-code-workspace)
 * [Credits](#credits)
-* [Code Inspiration](#code-inspiration)
-* [Content](#content)
-* [Media](#media) 
+    * [Content](#content)
+    * [Media](#media) 
 * [Acknowledgements](#acknowledgements)
 
 # Introduction 
@@ -90,15 +89,24 @@ Ultimately, the site provides a playful but fully functional simulation of a fut
 
 Here are the wireframes I created at project inception for desktop.
 
-Landing/Home page 
+Landing/Home page
+
 ![A wireframe for the homepage when displayed on desktop](/docs/images/landing-wireframe-pc.png)
+
 About page 
+
 ![A wireframe for the about page when displayed on desktop](/docs/images/about-wireframe-pc.png)
+
 Reviews page 
+
 ![A wireframe for the reviews page when displayed on desktop](/docs/images/reviews-wireframe-pc.png)
+
 Booking page 
+
 ![A wireframe for the booking page when displayed on desktop](/docs/images/booking-wireframe-pc.png)
+
 Edit, delete, sign in/out/up, confirmation pages
+
 ![A wireframe for the various administrative pages when displayed on desktop](/docs/images/admin-wireframe-pc.png)
 
 Here is a wireframe for the 'About' page on smaller screens (tablet and below) as it's the only page that should really change much. The rest of the pages should generally stay the same, just shortened down in the responsiveness and focus, with a burger icon on all those relevant for navigation. 
@@ -178,6 +186,12 @@ Here is a Flow Diagram for the Admin/Superuser(s) of the site
 
 # Features 
 
+# Ideas going forward 
+
+While the current version of the site meets the core requirements, there is definite scope for growth. Given the scale of the project and the time available, I haven't implemented a full user profile section. At present, users have access to a booking portal, which successfully demonstrates CRUD functionality. However, introducing user profiles in future would open up additional opportunities — such as enabling direct communication with site administrators or tracking personal activity more comprehensively.
+
+On the administrative side, there is potential to implement a comment and post moderation system. This would allow administrators to approve or reject submissions before they are published, streamlining content management. For now, I'm satisfied that the site effectively demonstrates the intended CRUD operations, but these enhancements would add further depth and professionalism to the platform.
+
 # Technologies Used 
 
 ## Languages Used 
@@ -189,16 +203,17 @@ Here is a Flow Diagram for the Admin/Superuser(s) of the site
 
 ## External Programs or Libraries used 
 - VSCode for local development
-- GoogleFonts
-- GitPod
-- GitHub
-- Heroku
-- NeonTech
-- PEP8 Validator 
-- Draw.io
-- ChatGPT
+- [GoogleFonts](https://fonts.google.com/)
+- [GitPod](https://www.gitpod.io/)
+- [GitHub](https://github.com/)
+- [Heroku](https://heroku.com)
+- [NeonTech](https://neon.com/)
+- [PEP8 Validator](https://pep8ci.herokuapp.com/)
+- [Draw.io](https://app.diagrams.net/)
+- [ChatGPT](https://chatgpt.com)
+- [Imageresizer.com](https://imageresizer.com/)
 
-# Testing
+# Testing File
 The testing.md file for this website can be viewed [here](/TESTING.md) 
 
 # Deployment and accessing code workspace
@@ -273,3 +288,19 @@ Under Manual deploy, choose the branch (e.g. main) and click Deploy Branch.
 Once the build process finishes, click Open App to launch the live site.
 
 You can also enable Automatic Deploys so that every push to GitHub triggers a redeployment.
+
+# Credits 
+
+## Content 
+This website is an orginal creation and all the content is based off my own ideas and imagination. The name of the planet Phaedrus-1711, is based off a character in one of my favourite books of all time *Zen and the Art of Motorcycle Maintenance*. Phaedrus' contextual existence in the novel amongst readers is somewhat contested, but Phaedrus could be summarised simply as the alter ego of the narrator. 17 & 11 are just favoured numbers in our household. We also have a cat named Phaedrus!
+
+You will find other literary links, too. There is a planet Kerouac-47. Jack is one of my favourite writers and he passed at the young age of 47. Vonnegut 5 is named after the author Kurt Vonnegut, and 5 is an homeage to *Slaughterhouse Five*. Joyce-730 is an ode to James Joyce, 730 being the number of pages there was in the first edition of the novel *Ulysses*.
+
+All content in the website itself is fictional. 
+
+## Media 
+As stated near the top of this ReadMe file, all the media in this project was generated with ChatGPT with prompts given by me, the autor of the site. 
+
+## Acknowledgements 
+
+I would like to thank (again!) the close knit support of friends and family I have. When it comes to these projects, they all offer their continuous encouragement and offer to test things out for me. 
