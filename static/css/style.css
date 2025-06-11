@@ -609,6 +609,13 @@ button.btn:hover {
     }
 }
 
+/* KEEPS LANDING PAGE FROM NOT PUSHING ON LAPTOP */ 
+@media (min-width: 769px) {
+    .landing-text p {
+        margin-top: 250px;
+    }
+}
+
 @media (max-width: 424px) {
     .getaway-msg {
         margin-top: 300px;
