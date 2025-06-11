@@ -203,9 +203,11 @@ On the administrative side, there is potential to implement a comment and post m
 - JavaScript
 - Python 
 - Django
+- SQL
 
 ## External Programs or Libraries used 
 - VSCode for local development
+- PostgreSQL
 - [GoogleFonts](https://fonts.google.com/)
 - [GitPod](https://www.gitpod.io/)
 - [GitHub](https://github.com/)

@@ -14,6 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (reviews.length > 0) {
         showCurrentReview(); 
-        setInterval(showCurrentReview, 80000);
+        setInterval(showCurrentReview, 5000);
     }
 });

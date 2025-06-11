@@ -25,7 +25,7 @@
 
 ### HTML 
 
-HTML validation was completed using [W3C Validator](https://validator.w3.org). In past projects I have copied and pasted my HTML directly from the files in VS Code in to the validator to test. This time, due to having base.html and most html pages in my project extending from base.html, I went to every single page on the website and viewed the source code. I copied and pasted this html in to the validator. Every single page  passed with no errors.
+HTML validation was completed using [W3C Validator](https://validator.w3.org). In past projects I have copied and pasted my HTML directly from the files in VS Code in to the validator to test. This time, due to having base.html and most html pages in my project extending from base.html, I went to every single page on the deployed website and viewed the source code. I copied and pasted this html in to the validator. Every single page passed with no errors. When putting base.html into the HTML validator itself by direct input it fails however this is due to the {% ...} tag at the start, a Django-specific command invisible to the browser. 
 
 ### CSS 
 
@@ -37,7 +37,9 @@ Javascript validation was completed using [JSHint](https://jshint.com/) and both
 
 ### Python
 
-Python PEP8 compliance testing and validation was completed using [the CI Python Linter](https://pep8ci.herokuapp.com). Every single py file was input on 9/6 after reaching a point in development where likely no more changes were to be made apart from comments. All files were amended and are now compliant with no errors. 
+Python PEP8 compliance testing and validation was completed using [the CI Python Linter](https://pep8ci.herokuapp.com). Every single .py file was input on 9/6 after reaching a point in development where likely no more changes were to be made apart from comments. All files were amended and are now compliant with no errors. 
+
+Update: Another .py file run for validation was done on 11/6 due to changes made in the code with 500 errors found. These are now rectified and all .py files passed validation. 
 
 ## Lighthouse 
 
@@ -98,3 +100,6 @@ No. 13 | When users went to leave a comment on a review, the form included a lab
 No. 14 | Review detail layout looked messy and not up to modern standards | After using other websites for inspiration (like Booking.com and Amazon.co.uk), the template was reimagined by wrapping sections in divs with semantic classes like .review-header, .comment-section etc. CSS was then added to these to improve the order, layout, spacing and typography. The page now looks well structured and separated. 
 No. 15 | Booking cancellations happened instantly without confirmation message, so when you cancelled you were immediately taking to My Bookings with the text "You have no bookings". | The button was replaced with a link directing to a separate confirmation page that was created very early on in development but almost forgotten about due to the depth of the project. The cancel_booking view then handled requests by directing to confirm_cancel.html and only deleted the booking on a POST. Now they're taken to a 'make-sure' cancel page avoiding any accidental cancellations. 
 No. 16 | Multiple pages that were very late to development in terms of styling all had their content pushed too close to the top of the browser window, creating a cramped appearance. | Each page had its content wrapped in a div with class .spacing-top and a shared rule was created to bring them all down 80px.
+No. 17 | Booking more than two guests caused a 500 error | Validation was added to the booking form to restrict guest entries to between 1 and 2 people only, with a custom error message shown to the user. Additional checks were added in the model to prevent invalid data from reaching the database. 
+No.18 | Extremely long bookings caused a server error when calculcating cost and duration | A maximum limit of 7 days was enforced through form validators, with a clear error message shown if exceeded. This prevents application crashes and aligns with the pricing model. 
+No.19 | If a user submitted a comment with only whitespace, the comment was silently rejected with no explanation.| A form level validation check was added, and error message is now rendered clearly above the comment field when the input is invalid. 
