@@ -5,5 +5,7 @@
     <h1>Booking Confirmed</h1>
     <p>Thank you, {{ booking.name }}! Your stay from {{ booking.check_in }} to {{ booking.check_out }} is confirmed.</p>
     <p>Total cost: £{{ booking.total_cost }}</p>
+    <p>We look forward to welcoming you to The Space Shack!</p>
+    <a href="{% url 'my_bookings' %}" class="btn small">Go to My Bookings</a>
   </div>   
 {% endblock %}

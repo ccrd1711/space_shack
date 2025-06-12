@@ -13,6 +13,7 @@ The live Space Shack site can be viewed [here](https://space-shack-a7e1db1b7daa.
     * [User Stories](#user-stories)
 * [Design Development](#design-development)
     * [Typography](#typography)
+    * [Colour Scheme](#colour-scheme)
     * [Wireframes](#wireframes)
     * [Images](#images)
     * [Database Tables](#database-tables)
@@ -96,6 +97,17 @@ Before all this, I actually had a completely different idea but I felt like the 
 ## Typography 
 
 The site uses the Orbitron font throughout to maintain a futuristic, space-themed aesthetic. While I initially considered using a classic sci-fi green (often seen in retro space films) for the accent color, I felt it would be too harsh on the eyes. Instead, I opted for a bold yellow accent that complements the theme while keeping the overall look visually accessible and modern.
+
+## Colour Scheme
+
+This site incorporates the use of imagery into every page barring a few (Each individual review page, and both of the edit and delete buttons on that page and their redirects, will lead to a smartly coloured page with no imagery.) Despite this, the contrast is excellent throughout as shown in the screenshots below. Where there is a shift in the colour of the background for *imageColourPicker*, the lighter of the colours was chosen with the pen to try and accurately show the contrast levels to the text above it. 
+
+![A screenshot showing contrasting color levels](/docs/images/features/contrast-check-1.jpg)
+![A screenshot showing contrasting color levels](/docs/images/features/contrast-check-2.jpg)
+![A screenshot showing contrasting color levels](/docs/images/features/contrast-check-3.jpg)
+![A screenshot showing contrasting color levels](/docs/images/features/contrast-check-4.jpg)
+![A screenshot showing contrasting color levels](/docs/images/features/contrast-check-5.jpg)
+![A screenshot showing contrasting color levels](/docs/images/features/contrast-check-6.jpg)
 
 ## Wireframes 
 
@@ -197,6 +209,8 @@ Here is a Flow Diagram for the Admin/Superuser(s) of the site
 ![User Flow Diagram](/docs/images/website-flow-admin.drawio.png)
 
 # Features 
+
+
 
 # Ideas going forward 
 

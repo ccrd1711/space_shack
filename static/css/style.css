@@ -203,33 +203,33 @@ footer {
 }
 
 .footer-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #000; /* or match your current footer bg */
-  color: white;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000; /* or match your current footer bg */
+    color: white;
+    flex-wrap: wrap;
 }
 
 .footer-text {
-  margin: 0;
+    margin: 0;
 }
 
 .social-icons {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .social-icons a {
-  color: white; /* or whatever fits your footer */
-  margin: 0 10px;
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.3s;
+    color: white; /* or whatever fits your footer */
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #FFD700; /* or whatever hover color you like */
+    color: #FFD700; /* or whatever hover color you like */
 }
 
 
@@ -320,8 +320,8 @@ h2 {
 }
 
 body.review-dark {
-  background-color: #031430;
-  color: #fff;
+    background-color: #031430;
+    color: #fff;
 }
 
 .review-list-page h1 {
@@ -372,19 +372,19 @@ body.review-dark {
 
 .read-more-link,
 .btn.small {
-  color: white;
-  text-decoration: underline;
+    color: white;
+    text-decoration: underline;
 }
 
 .read-more-link:hover,
 .btn.small:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* STOPS LINK GOING PURPLE AFTER CLICKING */
 .read-more-link:visited,
 .btn.small:visited {
-  color: white;
+    color: white;
 }
 
 /* INDIVIDUAL REVIEWS PAGE WITH HEART */
@@ -528,28 +528,27 @@ button.btn:hover {
 }
 
 .messages .error {
-  color: red; /* FOR NON-SIGNED IN BOOKING ATTEMPTS */
-  margin-top: 10px;
-  font-weight: bold;
+    color: red; /* FOR NON-SIGNED IN BOOKING ATTEMPTS */
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 /* SIGN UP FORM */
-
 .form-row {
-  margin-bottom: 1.2rem;
-  flex-direction: column;
-  width: 50%;
+    margin-bottom: 1.2rem;
+    flex-direction: column;
+    width: 50%;
 }
 
 .form-row label {
-  font-weight: bold;
-  margin-bottom: 0.2rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
 }
 
 .helptext {
-  font-size: 0.9rem;
-  color: white;
-  margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 0.4rem;
 }
 
 
@@ -640,7 +639,7 @@ button.btn:hover {
     }
 
     header nav ul:last-child {
-    margin-right: 0px;
+        margin-right: 0px;
     }
 
     .review-detail-container {
@@ -663,14 +662,14 @@ button.btn:hover {
     }
 
     .review-list-page h1 {
-    padding-top: 50px;
+        padding-top: 50px;
     }
 
     .review-list {
-    z-index: 0;
-    padding-bottom: 100px;
-    width: 100%; 
-    max-width: 900px;
+        z-index: 0;
+        padding-bottom: 100px;
+        width: 100%; 
+        max-width: 900px;
     }
 }
 
@@ -737,16 +736,16 @@ button.btn:hover {
         flex-direction: row;
         justify-content: space-between;
         padding: 8px 12px;
-  }
+    }
 
     .footer-text {
         font-size: 14px;
     }
 
     .social-icons a {
-    font-size: 16px;
-    margin-left: 10px;
-  }
+        font-size: 16px;
+        margin-left: 10px;
+    }
 
     main {
         padding-bottom: 4rem;
@@ -759,8 +758,8 @@ button.btn:hover {
 
 /* KEEP HOME BUTTONS SMALL - AVOID SQUASH AND OVERLAP */
 @media (max-width: 374px) {
-  .buttons .btn {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.6rem;
-  }
+    .buttons .btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
 }
