@@ -2,6 +2,8 @@
 
 ![The Space Shack Website amiresponsive image](/docs/images/amiresponsive-shack.png)
 
+The README.md for this website can be found [here](/README.md).
+
 # Testing Contents Menu 
 
 * [Automated Testing](#automated-testing)
@@ -86,11 +88,12 @@ Now, both review and comment submissions strip whitespace and validate properly.
 
 Below are 5 screenshots all relating to errors I had found within the booking form and were subsequently fixed (please see [bugs](#bugsissuesfixes)). 
 
-Despite setting initial parameters, my code did not sufficiently prevent all booking-related faults. During testing, I discovered that unvalidated users could submit bookings, including:
+Despite setting initial parameters, my code did not sufficiently prevent all booking-related faults. During testing, I discovered that unvalidated users could submit bookings with:
 
 - Incorrectly formatted email addresses
 - Stay durations longer than intended
 - Guest numbers exceeding the 2-person limit
+- Stays that begun in the past, or when the check-in date was after the check-out date
 
 Each of these issues caused the site to break or behave unexpectedly. Validation checks were added to address these problems and ensure user input meets all booking requirements.These screenshots provide additional contextual proof that these issues are now dealt with and hopefully should no longer be an issue on the site. 
 
@@ -129,3 +132,4 @@ No. 16 | Multiple pages that were very late to development in terms of styling a
 No. 17 | Booking more than two guests caused a 500 error | Validation was added to the booking form to restrict guest entries to between 1 and 2 people only, with a custom error message shown to the user. Additional checks were added in the model to prevent invalid data from reaching the database. 
 No.18 | Extremely long bookings caused a server error when calculcating cost and duration | A maximum limit of 7 days was enforced through form validators, with a clear error message shown if exceeded. This prevents application crashes and aligns with the pricing model. 
 No.19 | If a user submitted a comment with only whitespace, the comment was silently rejected with no explanation.| A form level validation check was added, and error message is now rendered clearly above the comment field when the input is invalid. 
+No.20 | When users submitted the booking form with a check in date in the past it caused a 500 error.| Added validation to ensure the check-in date is not earlier than current date. If a user now tries to do this, a clear error message is shown and the form is rejected.
