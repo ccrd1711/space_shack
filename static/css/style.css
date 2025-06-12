@@ -399,7 +399,7 @@ body.review-dark {
     display: flex;
     gap: 1rem;
     font-size: 0.9rem;
-    color: #aaa;
+    color: white;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -471,7 +471,7 @@ body.review-dark {
 
 .comment-date {
     font-size: 0.8rem;
-    color: #777;
+    color:white;
 }
 
 .no-comments {

@@ -12,6 +12,7 @@ The live Space Shack site can be viewed [here](https://space-shack-a7e1db1b7daa.
     * [Target Audience](#target-audience)
     * [User Stories](#user-stories)
 * [Design Development](#design-development)
+    * [Typography](#typography)
     * [Wireframes](#wireframes)
     * [Images](#images)
     * [Database Tables](#database-tables)
@@ -87,6 +88,14 @@ The manual testing for these can be found in the [Testing document](/TESTING.md)
 - As a returning user I want to view and manage my upcoming bookings, so I can keep track of my interplanetary travel plans with ease.
 
 # Design Development
+
+Overall I wanted this website to have a fairly 'dark' look, to help reflect the darkness and 'abyss-ness' of space. I have styled the backgrounds with ChatGPT in this manner on purpose. It helped to create a cosy image of the fictional shack to 'entice' people to make 'bookings'. 
+
+Before all this, I actually had a completely different idea but I felt like the scope was too large. It was to have a site where users could create, edit and delete their own fictional planets. It would include planet designs, colours, features, distance from the sun etc however I think it would have been a mission to get images generated of every new one created - a feature I think a site that does that would need. It wouldn't be enough to create the planets with no visual pleasure after. 
+
+## Typography 
+
+The site uses the Orbitron font throughout to maintain a futuristic, space-themed aesthetic. While I initially considered using a classic sci-fi green (often seen in retro space films) for the accent color, I felt it would be too harsh on the eyes. Instead, I opted for a bold yellow accent that complements the theme while keeping the overall look visually accessible and modern.
 
 ## Wireframes 
 
@@ -217,6 +226,7 @@ On the administrative side, there is potential to implement a comment and post m
 - [Draw.io](https://app.diagrams.net/)
 - [ChatGPT](https://chatgpt.com)
 - [Imageresizer.com](https://imageresizer.com/)
+- [Imagecolorpicker.com](https://imagecolorpicker.com/)
 
 # Testing File
 The testing.md file for this website can be viewed [here](/TESTING.md) 
@@ -304,7 +314,7 @@ You will find other literary links, too. There is a planet Kerouac-47. Jack is o
 All content in the website itself is fictional. 
 
 ## Media 
-As stated near the top of this ReadMe file, all the media in this project was generated with ChatGPT with prompts given by me, the autor of the site. 
+As stated near the top of this ReadMe file, all the media in this project was generated with ChatGPT with prompts given by me, the autor of the site. Late in the project I also realised I didn't have a home button in the top left which I like to have as an option, ChatGPT also designed that for me. 
 
 ## Acknowledgements 
 
