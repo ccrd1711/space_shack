@@ -1,26 +1,55 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block body_class %}class="booking-page"{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1>Book the Space Shack</h1>
+  <div class="container">
+    <h1>Book the Space Shack</h1>
 
-        <form method="post">
-            {% csrf_token %}
-            
-            {{ form.as_p }}
+    <form method="post">
+      {% csrf_token %}
 
-            <button type="submit" class="btn">Book Now</button>
-        </form>
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li class="error">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
-{% endblock %} 
-</body>
-</html>
+      {{ form.non_field_errors }}
+
+      <p>
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {{ form.name.errors }}
+      </p>
+
+      <p>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+      </p>
+
+      <p>
+        {{ form.number_of_guests.label_tag }}
+        {{ form.number_of_guests }}
+        {{ form.number_of_guests.errors }}
+      </p>
+
+      <p>
+        {{ form.check_in.label_tag }}
+        {{ form.check_in }}
+        {{ form.check_in.errors }}
+      </p>
+
+      <p>
+        {{ form.check_out.label_tag }}
+        {{ form.check_out }}
+        {{ form.check_out.errors }}
+      </p>
+
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="error">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endblock %}
