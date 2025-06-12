@@ -34,7 +34,6 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'space-shack-a7e1db1b7daa.herokuapp.com',
-    '*',
 ]
 
 # Application definition
@@ -153,9 +152,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -164,5 +160,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-X_FRAME_OPTIONS = 'ALLOWALL'
