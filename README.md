@@ -210,7 +210,39 @@ Here is a Flow Diagram for the Admin/Superuser(s) of the site
 
 # Features 
 
+Here are some screenshots from the live site to show what users can look forward to 'on arrival'. 
 
+This screenshot below is of the landing page. There are quite a few features to see here. There is the icon in the top left that will take you 'Home' instead of having to use the nav menu (this is a mobile shot). You can, however, still see the dropdown in action of a 'Signed-in' user. The arrow beside your name allows you to see bookings and logout. You can also see the social media links at the bottom in the footer. 
+
+![Home page screenshot](/docs/images/features/nav-expanded-mobile.jpg)
+
+This screenshot is of the 'About' page. I really wanted to allow myself a bit more creativity with this project and so although this page was not part of any requirements, I decided to put it in. It allowed me to have some fun with the planet names and just overall general content. This is of a PC view, showing the nav bar in it's full flow rather than condensed. 
+
+![Home page screenshot](/docs/images/features/nav-expanded-pc.jpg)
+
+This screenshot shows the confirmation screen after a user makes a booking on the Space Shack. It has a welcome message, the price, and as you can see full functionality in taking you to your bookings screen should you want to amend or delete the booking. I did not want users to have to navigate more than needs be, but also wanted to keep the edit/delete buttons for another area outside of confirmation 
+
+![Home page screenshot](/docs/images/features/booking-confirmation.png)
+
+And here is confirmation of the screen you would have when you get to My Bookings. Edit and delete both come with their own dedicated html pages allowing for full control, and the same rules that apply when making the initial booking.
+
+![Home page screenshot](/docs/images/features/bookings-made.png)
+
+Here is a screenshot of the booking screen, as well. Full functionality testing can be found for this and other aspects of user input on the site in the [Testing document](/TESTING.md)
+
+![Home page screenshot](/docs/images/features/form-shot.jpg)
+
+Here is a screenshot of the welcoming reviews page. I do not like the idea of grid displays so the review is a carousel that changes every 5 seconds. Users can still click in to reviews if they feel they want to re-read, or if some reviews are too long and they've not had enough time to read it 
+
+![Home page screenshot](/docs/images/features/reviews-shot.jpg)
+
+This is a screenshot of the page of each individual review, as mentioned above too. It shows a bit more detail and the bakcground changes colour for a bit of variety. This is where users can 'Like' the review and leave a comment, and as you can see they are able to edit or delete comments too which, like bookings, have their own tidy dedicated pages for the action.
+
+![Reviews page screenshot](/docs/images/features/single-review-shot.jpg)
+
+Lastly here is a screenshot of the screen you're welcomed with when you want to post your own review. As stated elsewhere in the project, I took out the ability of uploading photos on this one. However if this were based on a real place I would have kept the functionality in there. 
+
+![Home page screenshot](/docs/images/features/posting-review.jpg)
 
 # Ideas going forward 
 
