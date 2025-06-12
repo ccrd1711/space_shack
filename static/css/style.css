@@ -537,7 +537,6 @@ button.btn:hover {
 
 .form-row {
   margin-bottom: 1.2rem;
-  display: flex;
   flex-direction: column;
   width: 50%;
 }
@@ -549,7 +548,7 @@ button.btn:hover {
 
 .helptext {
   font-size: 0.9rem;
-  color: #888;
+  color: white;
   margin-top: 0.4rem;
 }
 
@@ -735,19 +734,27 @@ button.btn:hover {
     }
 
      .footer-bar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 8px 12px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px 12px;
   }
 
-  .footer-text {
-    font-size: 14px;
-  }
+    .footer-text {
+        font-size: 14px;
+    }
 
-  .social-icons a {
+    .social-icons a {
     font-size: 16px;
     margin-left: 10px;
   }
+
+    main {
+        padding-bottom: 4rem;
+    }
+
+    .form-row {
+        width: 80%;
+    }
 }
 
 /* KEEP HOME BUTTONS SMALL - AVOID SQUASH AND OVERLAP */
