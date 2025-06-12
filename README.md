@@ -218,37 +218,39 @@ This screenshot below is of the landing page. There are quite a few features to 
 
 This screenshot is of the 'About' page. I really wanted to allow myself a bit more creativity with this project and so although this page was not part of any requirements, I decided to put it in. It allowed me to have some fun with the planet names and just overall general content. This is of a PC view, showing the nav bar in it's full flow rather than condensed. 
 
-![Home page screenshot](/docs/images/features/nav-expanded-pc.jpg)
+![About page screenshot](/docs/images/features/nav-expanded-pc.jpg)
 
 This screenshot shows the confirmation screen after a user makes a booking on the Space Shack. It has a welcome message, the price, and as you can see full functionality in taking you to your bookings screen should you want to amend or delete the booking. I did not want users to have to navigate more than needs be, but also wanted to keep the edit/delete buttons for another area outside of confirmation 
 
-![Home page screenshot](/docs/images/features/booking-confirmation.png)
+![Confirmation page screenshot](/docs/images/features/booking-confirmation.png)
 
 And here is confirmation of the screen you would have when you get to My Bookings. Edit and delete both come with their own dedicated html pages allowing for full control, and the same rules that apply when making the initial booking.
 
-![Home page screenshot](/docs/images/features/bookings-made.png)
+![My bookings page screenshot](/docs/images/features/bookings-made.png)
 
 Here is a screenshot of the booking screen, as well. Full functionality testing can be found for this and other aspects of user input on the site in the [Testing document](/TESTING.md)
 
-![Home page screenshot](/docs/images/features/form-shot.jpg)
+![Booking page screenshot](/docs/images/features/form-shot.jpg)
 
 Here is a screenshot of the welcoming reviews page. I do not like the idea of grid displays so the review is a carousel that changes every 5 seconds. Users can still click in to reviews if they feel they want to re-read, or if some reviews are too long and they've not had enough time to read it 
 
-![Home page screenshot](/docs/images/features/reviews-shot.jpg)
+![Reviews screenshot](/docs/images/features/reviews-shot.jpg)
 
 This is a screenshot of the page of each individual review, as mentioned above too. It shows a bit more detail and the bakcground changes colour for a bit of variety. This is where users can 'Like' the review and leave a comment, and as you can see they are able to edit or delete comments too which, like bookings, have their own tidy dedicated pages for the action.
 
-![Reviews page screenshot](/docs/images/features/single-review-shot.jpg)
+![Review-detail page screenshot](/docs/images/features/single-review-shot.jpg)
 
 Lastly here is a screenshot of the screen you're welcomed with when you want to post your own review. As stated elsewhere in the project, I took out the ability of uploading photos on this one. However if this were based on a real place I would have kept the functionality in there. 
 
-![Home page screenshot](/docs/images/features/posting-review.jpg)
+![Add review page screenshot](/docs/images/features/posting-review.jpg)
 
 # Ideas going forward 
 
 While the current version of the site meets the core requirements, there is definite scope for growth. Given the scale of the project and the time available, I haven't implemented a full user profile section. At present, users have access to a booking portal, which successfully demonstrates CRUD functionality. However, introducing user profiles in future would open up additional opportunities — such as enabling direct communication with site administrators or tracking personal activity more comprehensively.
 
 On the administrative side, there is potential to implement a comment and post moderation system. This would allow administrators to approve or reject submissions before they are published, streamlining content management. For now, I'm satisfied that the site effectively demonstrates the intended CRUD operations, but these enhancements would add further depth and professionalism to the platform.
+
+Further, there is the chance to only allow users to leave a review once they have had a stay at the shack. This would have been a cool feature to implement despite it being fictional. This could be validated by checking if the user has an instance of booking, and if it's in the past then that would grant them functionality to post. Due to the scope and time constraints I haven't implemented it so far. 
 
 # Technologies Used 
 

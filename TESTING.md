@@ -12,12 +12,9 @@
     * [User Stories](#user-stories)
     * [New Visitors](#new-visitors-to-the-site)
     * [Returning Visitors](#returning-visitors)
-    * [New Visitor Testing](#new-visitor-testing)
-    * [Return Visitor Testing](#returning-visitor-testing)
+    * [Fault Testing](#fault-finding)
 
 * [Bugs/Issues/Fixes](#bugsissuesfixes)
-
-* [Responsive Tests](#responsive-tests)
 
 # Automated Testing
 
@@ -77,6 +74,35 @@ Here are the reports I got from running Lighthouse reports on desktop and mobile
 |As a returning user I want to enjoy navigating through the site on mobile as well as desktop.| There is an accessible and well highlighted dropdown to take you to all elements of the site plus an icon in the top left to take you to the index page quicker.| Pass
 |As a returning user I want to view and manage my upcoming bookings, so I can keep track of my interplanetary travel plans with ease.| In the dropdown under the user name is a section for My Bookings where any booked trips can be removed or amended as necessary| Pass 
 
+## Fault Testing 
+
+This section is dedicated to showing visually how some of the Error 500's have been rectified and what they show instead of breaking the site and showing an error. Most of these were found through the Booking form as that's arguably the heaviest section of user interaction. 
+
+The screenshot below shows what happens when a user attempts to submit a comment containing only whitespace (in this case, under a particularly harsh review!).
+Previously, these inputs were incorrectly accepted but not displayed — and no error message was shown to the user, which led to poor user experience.
+Now, both review and comment submissions strip whitespace and validate properly. If the input is empty after trimming, a user-friendly warning is shown instead of triggering a server error. This also extends to the edit comment page. 
+
+![Screenshot of whitespace in comments section](/docs/images/tests/whitespace-comments.jpg)
+
+Below are 5 screenshots all relating to errors I had found within the booking form and were subsequently fixed (please see [bugs](#bugsissuesfixes)). 
+
+Despite setting initial parameters, my code did not sufficiently prevent all booking-related faults. During testing, I discovered that unvalidated users could submit bookings, including:
+
+- Incorrectly formatted email addresses
+- Stay durations longer than intended
+- Guest numbers exceeding the 2-person limit
+
+Each of these issues caused the site to break or behave unexpectedly. Validation checks were added to address these problems and ensure user input meets all booking requirements.These screenshots provide additional contextual proof that these issues are now dealt with and hopefully should no longer be an issue on the site. 
+
+![Screenshot of booking error number 1](/docs/images/tests/forms-validation-1.jpg)
+
+![Screenshot of booking error number 2](/docs/images/tests/forms-validation-2.jpg)
+
+![Screenshot of booking error number 3](/docs/images/tests/forms-validation-3.jpg)
+
+![Screenshot of booking error number 4](/docs/images/tests/forms-validation-4.jpg)
+
+![Screenshot of booking error number 5](/docs/images/tests/forms-validation-5.png)
 
 # Bugs/Issues/Fixes
 
